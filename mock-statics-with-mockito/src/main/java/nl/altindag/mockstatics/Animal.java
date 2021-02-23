@@ -1,4 +1,4 @@
-package nl.altindag.tutorials.mockstatics;
+package nl.altindag.mockstatics;
 
 public interface Animal {
 

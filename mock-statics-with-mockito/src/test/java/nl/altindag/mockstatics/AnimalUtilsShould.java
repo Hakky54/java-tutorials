@@ -1,5 +1,7 @@
-package nl.altindag.tutorials.mockstatics;
+package nl.altindag.mockstatics;
 
+import nl.altindag.mockstatics.Animal;
+import nl.altindag.mockstatics.AnimalUtils;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
