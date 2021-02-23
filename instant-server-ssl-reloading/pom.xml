@@ -25,6 +25,7 @@
         <version.jackson>2.12.1</version.jackson>
         <version.slf4j>1.7.30</version.slf4j>
         <version.assertj-core>3.18.1</version.assertj-core>
+        <version.junit>5.7.1</version.junit>
         <version.logcaptor>2.4.0</version.logcaptor>
         <version.maven-shade-plugin>3.2.4</version.maven-shade-plugin>
         <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
@@ -75,6 +76,26 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${version.slf4j}</version>
+            </dependency>
+
+            <!--     testing libraries       -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${version.spring}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${version.junit}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${version.junit}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
