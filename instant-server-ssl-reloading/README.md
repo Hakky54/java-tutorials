@@ -18,7 +18,7 @@ mvn spring-boot:run -pl server
 Visit the server with the following url on your browser: https://localhost:8443/api/hello
 Open the certificate details in your browser by clicking on the lock logo (on Chrome). You will see a similar certificate detail as shown below:
 
-![alt text](https://github.com/Hakky54/java-tutorials/tree/main/instant-server-ssl-reloading/images/before-reloading.png?raw=true)
+![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading/images/before-reloading.png?raw=true)
 
 Please note down the expiration date. Afterwords you will compare it when you have run the admin application.
 
@@ -31,4 +31,4 @@ mvn exec:java -pl admin
 Refresh your browser tab and open the certificate details again and compare the expiration date with the one you have noted down.
 You should have a similar certificate detail as shown below:
 
-![alt text](https://github.com/Hakky54/java-tutorials/tree/main/instant-server-ssl-reloading/images/after-reloading.png?raw=true)
+![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading/images/after-reloading.png?raw=true)
