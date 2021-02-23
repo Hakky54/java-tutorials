@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/Hakky54/java-tutorials/workflows/Build/badge.svg)](https://github.com/Hakky54/java-tutorials/actions)
+
 # Java Tutorials 📝
 A repository containing different java tutorials
 
