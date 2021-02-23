@@ -6,11 +6,11 @@
 
     <parent>
         <groupId>io.github.hakky54</groupId>
-        <artifactId>instant-server-ssl-reloading</artifactId>
+        <artifactId>instant-ssl-reloading-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>server</artifactId>
+    <artifactId>instant-ssl-reloading-server</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 

@@ -23,13 +23,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-class AppIT {
+class AppShould {
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @Test
-    void test() throws IOException, InterruptedException {
+    void updateServerCertificate() throws IOException, InterruptedException {
         assertServerCertificateExpirationDate("2021-04-28");
 
         SSLFactory sslFactory = createClientSllFactory();
