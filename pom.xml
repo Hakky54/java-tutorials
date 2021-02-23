@@ -9,6 +9,7 @@
 
     <modules>
         <module>mock-statics-with-mockito</module>
+        <module>instant-server-ssl-reloading</module>
     </modules>
 
     <licenses>
