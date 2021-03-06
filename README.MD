@@ -10,9 +10,10 @@ A repository containing different java tutorials
 4. A terminal
 
 ## Testing 🎯
-- [Unit Testing Static Methods With Mockito](mock-statics-with-mockito)
+- [Unit Testing Static Methods with Mockito](mock-statics-with-mockito)
 - [Unit Testing Java Util Logging logs with LogCaptor](log-captor-examples/log-captor-with-java-util-logging)
 - [Unit Testing Log4J logs with LogCaptor](log-captor-examples/log-captor-with-log4j-core)
+- [Unit Testing SLF4J Logback logs with LogCaptor](log-captor-examples/log-captor-with-logback-classic)
 
 ## Security 🔐
 - [Instant Server SSL Reloading](instant-server-ssl-reloading)
