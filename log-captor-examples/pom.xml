@@ -6,7 +6,8 @@
     <modules>
         <module>log-captor-with-java-util-logging</module>
         <module>log-captor-with-log4j-core</module>
-        <module>log-captor-with-logback-classic</module>
+        <module>log-captor-with-slf4j-logback-classic</module>
+        <module>log-captor-with-slf4j-log4j</module>
     </modules>
 
     <parent>
