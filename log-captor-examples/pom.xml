@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>log-captor-with-java-util-logging</module>
+        <module>log-captor-with-log4j-core</module>
     </modules>
 
     <parent>

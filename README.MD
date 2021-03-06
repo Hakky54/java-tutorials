@@ -12,6 +12,7 @@ A repository containing different java tutorials
 ## Testing 🎯
 - [Unit Testing Static Methods With Mockito](mock-statics-with-mockito)
 - [Unit Testing Java Util Logging logs with LogCaptor](log-captor-examples/log-captor-with-java-util-logging)
+- [Unit Testing Log4J logs with LogCaptor](log-captor-examples/log-captor-with-log4j-core)
 
 ## Security 🔐
 - [Instant Server SSL Reloading](instant-server-ssl-reloading)
