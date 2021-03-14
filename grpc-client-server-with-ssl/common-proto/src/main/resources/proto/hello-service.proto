@@ -11,7 +11,7 @@ service HelloService {
 
 message HelloResponse {
   string message = 1;
-  }
+}
 
 message HelloRequest {
   string name = 1;

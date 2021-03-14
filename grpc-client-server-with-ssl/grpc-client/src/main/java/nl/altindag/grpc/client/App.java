@@ -28,14 +28,9 @@ public class App {
 
     public void hello(String name) {
         LOGGER.info("Will try to greet the server as {} ...", name);
+
         HelloRequest request = HelloRequest.newBuilder().setName(name).build();
-        HelloResponse response;
-        try {
-            response = stub.hello(request);
-        } catch (StatusRuntimeException e) {
-            LOGGER.warn("RPC failed: {}", e.getStatus());
-            return;
-        }
+        HelloResponse response = stub.hello(request);
 
         LOGGER.info("Server response: {}", response.getMessage());
     }
