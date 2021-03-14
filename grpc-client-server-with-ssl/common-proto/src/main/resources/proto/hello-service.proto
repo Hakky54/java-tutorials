@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "HelloServiceProto";
+
+package nl.altindag.grpc;
+
+service HelloService {
+  rpc hello(HelloRequest) returns (HelloResponse);
+}
+
+message HelloResponse {
+  string message = 1;
+  }
+
+message HelloRequest {
+  string name = 1;
+}
+
