@@ -37,9 +37,9 @@ public class App {
         LOGGER.info("Server started, listening on " + PORT);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.err.println("*** shutting down gRPC server since JVM is shutting down");
+            LOGGER.warn("*** shutting down gRPC server since JVM is shutting down");
             App.this.stop();
-            System.err.println("*** server shut down");
+            LOGGER.warn("*** server shut down");
         }));
     }
 
