@@ -37,8 +37,7 @@ public class AdminController {
             KeyStore trustStore = KeyStoreUtils.loadKeyStore(trustStoreStream, request.getTrustStorePassword());
             X509ExtendedTrustManager trustManager = TrustManagerUtils.createTrustManager(trustStore);
 
-            sslService.updateKeyManager(keyManager);
-            sslService.updateTrustManager(trustManager);
+            sslService.updateSslMaterials(keyManager, trustManager);
         }
     }
 
