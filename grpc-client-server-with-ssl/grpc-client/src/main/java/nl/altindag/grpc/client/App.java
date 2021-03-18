@@ -2,7 +2,6 @@ package nl.altindag.grpc.client;
 
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
-import io.grpc.StatusRuntimeException;
 import io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.NettyChannelBuilder;
 import io.netty.handler.ssl.SslContext;
