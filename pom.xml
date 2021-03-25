@@ -40,7 +40,7 @@
         <version.maven-fail-safe>3.0.0-M5</version.maven-fail-safe>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
         <version.maven-shade-plugin>3.2.4</version.maven-shade-plugin>
-        <version.os-maven-plugin>1.6.2</version.os-maven-plugin>
+        <version.os-maven-plugin>1.7.0</version.os-maven-plugin>
         <version.protobuf-maven-plugin>0.6.1</version.protobuf-maven-plugin>
         <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
