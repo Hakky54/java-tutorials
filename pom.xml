@@ -42,7 +42,7 @@
         <version.maven-shade-plugin>3.2.4</version.maven-shade-plugin>
         <version.os-maven-plugin>1.6.2</version.os-maven-plugin>
         <version.protobuf-maven-plugin>0.6.1</version.protobuf-maven-plugin>
-        <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
+        <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.sslcontext-kickstart>6.5.0</version.sslcontext-kickstart>
