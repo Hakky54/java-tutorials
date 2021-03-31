@@ -23,12 +23,12 @@ public class SecurityConfig {
 
     @Bean
     public MapReactiveUserDetailsService mapReactiveUserDetailsService() {
-        UserDetails bob = User.withUsername("black-hole")
+        UserDetails blackHoleAsCommonName = User.withUsername("black-hole")
                 .authorities(new SimpleGrantedAuthority("ROLE_USER"))
                 .password("")
                 .build();
 
-        return new MapReactiveUserDetailsService(bob);
+        return new MapReactiveUserDetailsService(blackHoleAsCommonName);
     }
 
 }
