@@ -1,0 +1,16 @@
+spring:
+  banner:
+    location: classpath:banner.txt
+  main:
+    web-application-type: reactive
+
+server:
+  port: 443
+  ssl:
+    enabled: true
+    key-store: classpath:identity.jks
+    key-password: secret
+    key-store-password: secret
+    trust-store: classpath:truststore.jks
+    trust-store-password: secret
+    client-auth: need
