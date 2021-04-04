@@ -19,4 +19,5 @@ A repository containing different java tutorials
 ## Security 🔐
 - [Instant Server SSL Reloading](instant-server-ssl-reloading)
 - [gRPC with SSL for Client and Server](grpc-client-server-with-ssl)
+- [ElasticSearch with SSL](elasticsearch-with-ssl)
 - [Spring Boot Reactive Server with Common Name Validation based on Spring Security](spring-security-cn-validation-for-reactive-server)
