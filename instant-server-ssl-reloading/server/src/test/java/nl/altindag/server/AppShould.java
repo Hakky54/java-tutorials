@@ -30,7 +30,7 @@ class AppShould {
 
     @Test
     void updateServerCertificate() throws IOException, InterruptedException {
-        assertServerCertificateExpirationDate("2021-08-02");
+        assertServerCertificateExpirationDate("2029-05-02");
 
         SSLFactory sslFactory = createClientSllFactory();
 
