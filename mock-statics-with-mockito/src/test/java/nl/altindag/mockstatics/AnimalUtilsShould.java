@@ -13,7 +13,7 @@ class AnimalUtilsShould {
     @Test
     void animalUtilsTest() {
         Animal kangal = AnimalUtils.getKangal();
-        try (MockedStatic<AnimalUtils> fooUtilsMocked = Mockito.mockStatic(AnimalUtils.class, invocation -> {
+        try (MockedStatic<AnimalUtils> mockedAnimalUtils = Mockito.mockStatic(AnimalUtils.class, invocation -> {
             Method method = invocation.getMethod();
             if ("getAnimal".equals(method.getName())) {
                 return invocation.callRealMethod();
@@ -21,7 +21,7 @@ class AnimalUtilsShould {
                 return invocation.getMock();
             }
         })) {
-            fooUtilsMocked.when(AnimalUtils::getGermanShepherd).thenReturn(kangal);
+            mockedAnimalUtils.when(AnimalUtils::getGermanShepherd).thenReturn(kangal);
             Animal animal = AnimalUtils.getAnimal();
             assertThat(animal.getName()).isEqualTo("kangal");
         }
