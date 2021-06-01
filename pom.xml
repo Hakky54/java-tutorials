@@ -63,7 +63,7 @@
         <version.protoc>3.12.0</version.protoc>
         <version.assertj-core>3.19.0</version.assertj-core>
         <version.junit>5.7.1</version.junit>
-        <version.mockito>3.9.0</version.mockito>
+        <version.mockito>3.10.0</version.mockito>
     </properties>
 
     <build>
