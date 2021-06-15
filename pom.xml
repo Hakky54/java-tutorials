@@ -57,7 +57,7 @@
         <version.log4j-slf4j>2.14.1</version.log4j-slf4j>
         <version.logback-classic>1.2.3</version.logback-classic>
         <version.grpc>1.38.0</version.grpc>
-        <version.elasticsearch>7.12.1</version.elasticsearch>
+        <version.elasticsearch>7.13.2</version.elasticsearch>
         <version.google.protobuf-java>3.15.8</version.google.protobuf-java>
         <version.javax.annotation-api>1.3.2</version.javax.annotation-api>
         <version.protoc>3.12.0</version.protoc>
