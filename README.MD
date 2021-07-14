@@ -15,6 +15,7 @@ A repository containing different java tutorials
 - [Unit Testing Log4J logs with LogCaptor](log-captor-examples/log-captor-with-log4j-core)
 - [Unit Testing SLF4J Logback logs with LogCaptor](log-captor-examples/log-captor-with-slf4j-logback-classic)
 - [Unit Testing SLF4J Log4j logs with LogCaptor](log-captor-examples/log-captor-with-slf4j-log4j)
+- [Unit Testing Spring Boot Log4j2 logs with LogCaptor](log-captor-examples/log-captor-with-spring-boot-starter-log4j2)
 
 ## Security 🔐
 - [Instant Server SSL Reloading](instant-server-ssl-reloading)

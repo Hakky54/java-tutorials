@@ -8,6 +8,7 @@
         <module>log-captor-with-log4j-core</module>
         <module>log-captor-with-slf4j-logback-classic</module>
         <module>log-captor-with-slf4j-log4j</module>
+        <module>log-captor-with-spring-boot-starter-log4j2</module>
     </modules>
 
     <parent>
