@@ -65,7 +65,7 @@ public class App {
 
         @Override
         public void onWebSocketError(Throwable throwable) {
-            System.out.println("got error");
+            System.err.println("got error");
         }
 
         public boolean hasReceivedServerResponse() {
