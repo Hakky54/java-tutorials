@@ -13,6 +13,11 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.bytes.BytesReference;
+import org.elasticsearch.common.xcontent.ToXContent;
+import org.elasticsearch.common.xcontent.XContentBuilder;
+import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.common.xcontent.XContentType;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -38,8 +43,15 @@ public class App {
 
         try(RestHighLevelClient client = new RestHighLevelClient(restClientBuilder)) {
             ClusterHealthResponse healthResponse = client.cluster().health(new ClusterHealthRequest(), RequestOptions.DEFAULT);
-            System.out.println(healthResponse);
+            String healthResponseAsJson = mapToJson(healthResponse);
+            System.out.println(healthResponseAsJson);
         }
+    }
+
+    private static String mapToJson(ClusterHealthResponse healthResponse) throws IOException {
+        XContentBuilder prettyPrint = XContentFactory.contentBuilder(XContentType.JSON).prettyPrint();
+        XContentBuilder xContentBuilder = healthResponse.toXContent(prettyPrint, ToXContent.EMPTY_PARAMS);
+        return BytesReference.bytes(xContentBuilder).utf8ToString();
     }
 
 }
