@@ -56,14 +56,14 @@
         <version.slf4j-simple>1.7.30</version.slf4j-simple>
         <version.log4j-core>2.14.1</version.log4j-core>
         <version.log4j-slf4j>2.14.1</version.log4j-slf4j>
-        <version.logback-classic>1.2.5</version.logback-classic>
+        <version.logback-classic>1.2.6</version.logback-classic>
         <version.grpc>1.39.0</version.grpc>
         <version.elasticsearch>7.13.4</version.elasticsearch>
-        <version.google.protobuf-java>3.17.3</version.google.protobuf-java>
+        <version.google.protobuf-java>3.18.0</version.google.protobuf-java>
         <version.javax.annotation-api>1.3.2</version.javax.annotation-api>
         <version.protoc>3.12.0</version.protoc>
         <version.websocket-client>9.4.43.v20210629</version.websocket-client>
-        <version.assertj-core>3.20.2</version.assertj-core>
+        <version.assertj-core>3.21.0</version.assertj-core>
         <version.junit>5.8.1</version.junit>
         <version.mockito>3.11.2</version.mockito>
         <version.consolecaptor>1.0.0</version.consolecaptor>
