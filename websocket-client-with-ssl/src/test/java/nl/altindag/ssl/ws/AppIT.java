@@ -15,7 +15,7 @@ class AppIT {
             assertThat(consoleCaptor.getStandardOutput())
                     .containsExactlyInAnyOrder(
                             "connected",
-                            "Received the following message from the server: Hello there!",
+                            "Received the following message from the server: {\"info\":\"You are using a test api key\"}",
                             "closed"
                     );
 

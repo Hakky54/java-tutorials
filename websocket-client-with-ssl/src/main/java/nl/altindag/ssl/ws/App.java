@@ -6,12 +6,15 @@ import nl.altindag.ssl.util.JettySslUtils;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketListener;
+import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
 
 import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 public class App {
+
+    public static final String WEBSOCKET_SERVER = "wss://demo.piesocket.com/v3/1?api_key=oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm";
 
     public static void main(String[] args) throws Exception {
         var sslFactory = SSLFactory.builder()
@@ -24,7 +27,7 @@ public class App {
         webSocketClient.start();
 
         MyWebSocketListener webSocketListener = new MyWebSocketListener();
-        var session = webSocketClient.connect(webSocketListener, new URI("ws://echo.websocket.org")).get();
+        var session = webSocketClient.connect(webSocketListener, new URI(WEBSOCKET_SERVER)).get();
         session.getRemote().sendString("Hello there!");
 
         // waiting till the server response before closing the client
