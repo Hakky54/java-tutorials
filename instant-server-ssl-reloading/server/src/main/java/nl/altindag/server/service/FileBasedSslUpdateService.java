@@ -11,10 +11,8 @@ import org.springframework.stereotype.Service;
 import javax.net.ssl.X509ExtendedKeyManager;
 import javax.net.ssl.X509ExtendedTrustManager;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.security.KeyStore;
 import java.time.Instant;
@@ -57,17 +55,13 @@ public class FileBasedSslUpdateService {
             if (identityUpdated && trustStoreUpdated) {
                 LOGGER.info("Keystore files have been changed. Trying to read the file content and preparing to updated the ssl material");
 
-                try(InputStream identityStream = Files.newInputStream(identityPath, StandardOpenOption.READ);
-                    InputStream trustStoreStream = Files.newInputStream(trustStorePath, StandardOpenOption.READ)) {
+                KeyStore keyStore = KeyStoreUtils.loadKeyStore(identityPath, identityPassword);
+                X509ExtendedKeyManager keyManager = KeyManagerUtils.createKeyManager(keyStore, identityPassword);
 
-                    KeyStore keyStore = KeyStoreUtils.loadKeyStore(identityStream, identityPassword);
-                    X509ExtendedKeyManager keyManager = KeyManagerUtils.createKeyManager(keyStore, identityPassword);
+                KeyStore trustStore = KeyStoreUtils.loadKeyStore(trustStorePath, trustStorePassword);
+                X509ExtendedTrustManager trustManager = TrustManagerUtils.createTrustManager(trustStore);
 
-                    KeyStore trustStore = KeyStoreUtils.loadKeyStore(trustStoreStream, trustStorePassword);
-                    X509ExtendedTrustManager trustManager = TrustManagerUtils.createTrustManager(trustStore);
-
-                    sslService.updateSslMaterials(keyManager, trustManager);
-                }
+                sslService.updateSslMaterials(keyManager, trustManager);
 
                 lastModifiedTimeIdentityStore = ZonedDateTime.ofInstant(identityAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC);
                 lastModifiedTimeTrustStore = ZonedDateTime.ofInstant(trustStoreAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC);
