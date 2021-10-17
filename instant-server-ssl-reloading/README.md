@@ -7,6 +7,11 @@ The repository contains:
  - Server, based on Spring Boot with Jetty as a server engine
  - Admin, which will send a http request containing the new certificates as a keystore file
 
+### SSL Updating entrypoint for the server:
+The server has two ways to update the existing ssl material:
+ - REST, see here for the implementation: [AdminController](server/src/main/java/nl/altindag/server/controller/AdminController.java)
+ - File based aka file change listener, see here for the implementation: [FilesBasedSslUpdateService](server/src/main/java/nl/altindag/server/service/FileBasedSslUpdateService.java)
+
 #### Requirements
  - Java 11
  - Terminal
