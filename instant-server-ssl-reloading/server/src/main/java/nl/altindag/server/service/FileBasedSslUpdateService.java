@@ -53,7 +53,7 @@ public class FileBasedSslUpdateService {
             boolean trustStoreUpdated = lastModifiedTimeTrustStore.isBefore(ZonedDateTime.ofInstant(trustStoreAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC));
 
             if (identityUpdated && trustStoreUpdated) {
-                LOGGER.info("Keystore files have been changed. Trying to read the file content and preparing to updated the ssl material");
+                LOGGER.info("Keystore files have been changed. Trying to read the file content and preparing to update the ssl material");
 
                 KeyStore keyStore = KeyStoreUtils.loadKeyStore(identityPath, identityPassword);
                 X509ExtendedKeyManager keyManager = KeyManagerUtils.createKeyManager(keyStore, identityPassword);
