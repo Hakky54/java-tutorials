@@ -66,7 +66,7 @@
         <version.assertj-core>3.21.0</version.assertj-core>
         <version.junit>5.8.1</version.junit>
         <version.mockito>3.12.4</version.mockito>
-        <version.consolecaptor>1.0.1</version.consolecaptor>
+        <version.consolecaptor>1.0.2</version.consolecaptor>
     </properties>
 
     <build>
