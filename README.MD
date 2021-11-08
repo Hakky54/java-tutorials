@@ -23,3 +23,7 @@ A repository containing different java tutorials
 - [ElasticSearch with SSL](elasticsearch-with-ssl)
 - [WebSocket Client with SSL](websocket-client-with-ssl)  
 - [Spring Boot Reactive Server with Common Name Validation based on Spring Security](spring-security-cn-validation-for-reactive-server)
+- TODO - Spring Boot Server with Common Name Validation based on AOP with AspectJ Weaver
+
+## Serialization & Deserialization ☢️
+- TODO - Two way object serialization while using one model with Jackson and Spring Boot
