@@ -12,7 +12,7 @@ startElasticSearchInstances() {
 
 exportCaCertificateOfElasticSearch() {
   echo 'Exporting ElasticSearch CA certificate to current directory...'
-  docker run -v es_certs:/certs --network=es_default docker.elastic.co/elasticsearch/elasticsearch:7.15.1 cat /certs/ca/ca.crt > ca.crt
+  docker run -v es_certs:/certs --network=es_default docker.elastic.co/elasticsearch/elasticsearch:7.15.2 cat /certs/ca/ca.crt > ca.crt
 }
 
 cd elasticsearch-docker/
