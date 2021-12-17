@@ -28,7 +28,7 @@ public class EmployeeService {
     }
 
     public void save(Employee employee) throws JsonProcessingException {
-        LOGGER.info("saving employee to the database..." + objectMapper.writeValueAsString(employee));
+        LOGGER.info("saving employee to the database...\n" + objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(employee));
         employees.add(employee);
     }
 
