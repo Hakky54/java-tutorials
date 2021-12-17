@@ -15,6 +15,7 @@
         <module>spring-security-cn-validation-for-reactive-server</module>
         <module>elasticsearch-with-ssl</module>
         <module>websocket-client-with-ssl</module>
+        <module>two-way-object-serialization</module>
     </modules>
 
     <licenses>

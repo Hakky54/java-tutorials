@@ -26,4 +26,4 @@ A repository containing different java tutorials
 - TODO - Spring Boot Server with Common Name Validation based on AOP with AspectJ Weaver
 
 ## Serialization & Deserialization ☢️
-- TODO - Two way object serialization while using one model with Jackson and Spring Boot
+- [Two-way object serialization while using one model with Jackson and Spring Boot](two-way-object-serialization)
