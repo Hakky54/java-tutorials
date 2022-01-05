@@ -56,7 +56,7 @@
         <version.slf4j>1.7.32</version.slf4j>
         <version.slf4j-simple>1.7.30</version.slf4j-simple>
         <version.log4j-core>2.14.1</version.log4j-core>
-        <version.log4j-slf4j>2.14.1</version.log4j-slf4j>
+        <version.log4j-slf4j>2.17.1</version.log4j-slf4j>
         <version.logback-classic>1.2.7</version.logback-classic>
         <version.grpc>1.42.1</version.grpc>
         <version.elasticsearch>7.15.2</version.elasticsearch>
