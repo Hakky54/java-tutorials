@@ -17,11 +17,12 @@ class AnimalUtilsShould {
             Method method = invocation.getMethod();
             if ("getAnimal".equals(method.getName())) {
                 return invocation.callRealMethod();
+            } else if ("getGermanShepherd".equals(method.getName())) {
+                return kangal;
             } else {
                 return invocation.getMock();
             }
         })) {
-            mockedAnimalUtils.when(AnimalUtils::getGermanShepherd).thenReturn(kangal);
             Animal animal = AnimalUtils.getAnimal();
             assertThat(animal.getName()).isEqualTo("kangal");
         }
