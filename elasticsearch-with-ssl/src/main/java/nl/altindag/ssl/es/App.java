@@ -1,5 +1,10 @@
 package nl.altindag.ssl.es;
 
+import co.elastic.clients.elasticsearch.ElasticsearchClient;
+import co.elastic.clients.elasticsearch.cluster.HealthResponse;
+import co.elastic.clients.json.jackson.JacksonJsonpMapper;
+import co.elastic.clients.transport.ElasticsearchTransport;
+import co.elastic.clients.transport.rest_client.RestClientTransport;
 import nl.altindag.ssl.SSLFactory;
 import nl.altindag.ssl.util.CertificateUtils;
 import org.apache.http.HttpHost;
@@ -7,17 +12,7 @@ import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.elasticsearch.action.admin.cluster.health.ClusterHealthRequest;
-import org.elasticsearch.action.admin.cluster.health.ClusterHealthResponse;
-import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
-import org.elasticsearch.client.RestClientBuilder;
-import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.bytes.BytesReference;
-import org.elasticsearch.xcontent.ToXContent;
-import org.elasticsearch.xcontent.XContentBuilder;
-import org.elasticsearch.xcontent.XContentFactory;
-import org.elasticsearch.xcontent.XContentType;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -37,21 +32,18 @@ public class App {
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("elastic", "PleaseChangeMe"));
 
-        RestClientBuilder restClientBuilder = RestClient.builder(new HttpHost("localhost", 9200, "https"))
+        RestClient restClient = RestClient.builder(new HttpHost("localhost", 9200, "https"))
                 .setHttpClientConfigCallback(httpClientBuilder ->
-                        httpClientBuilder.setSSLContext(sslFactory.getSslContext()).setDefaultCredentialsProvider(credentialsProvider));
+                        httpClientBuilder.setSSLContext(sslFactory.getSslContext()).setDefaultCredentialsProvider(credentialsProvider))
+                .build();
 
-        try(RestHighLevelClient client = new RestHighLevelClient(restClientBuilder)) {
-            ClusterHealthResponse healthResponse = client.cluster().health(new ClusterHealthRequest(), RequestOptions.DEFAULT);
-            String healthResponseAsJson = mapToJson(healthResponse);
-            System.out.println(healthResponseAsJson);
-        }
-    }
+        ElasticsearchTransport transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
+        ElasticsearchClient client = new ElasticsearchClient(transport);
 
-    private static String mapToJson(ClusterHealthResponse healthResponse) throws IOException {
-        XContentBuilder prettyPrint = XContentFactory.contentBuilder(XContentType.JSON).prettyPrint();
-        XContentBuilder xContentBuilder = healthResponse.toXContent(prettyPrint, ToXContent.EMPTY_PARAMS);
-        return BytesReference.bytes(xContentBuilder).utf8ToString();
+        HealthResponse healthResponse = client.cluster().health();
+        System.out.printf("Elasticsearch status is: [%s]", healthResponse.status());
+
+        restClient.close();
     }
 
 }
