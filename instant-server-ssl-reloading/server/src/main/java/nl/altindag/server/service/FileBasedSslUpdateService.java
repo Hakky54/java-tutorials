@@ -1,20 +1,15 @@
 package nl.altindag.server.service;
 
-import nl.altindag.ssl.util.KeyManagerUtils;
-import nl.altindag.ssl.util.KeyStoreUtils;
-import nl.altindag.ssl.util.TrustManagerUtils;
+import nl.altindag.ssl.SSLFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import javax.net.ssl.X509ExtendedKeyManager;
-import javax.net.ssl.X509ExtendedTrustManager;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.security.KeyStore;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -55,13 +50,12 @@ public class FileBasedSslUpdateService {
             if (identityUpdated && trustStoreUpdated) {
                 LOGGER.info("Keystore files have been changed. Trying to read the file content and preparing to update the ssl material");
 
-                KeyStore keyStore = KeyStoreUtils.loadKeyStore(identityPath, identityPassword);
-                X509ExtendedKeyManager keyManager = KeyManagerUtils.createKeyManager(keyStore, identityPassword);
+                SSLFactory sslFactory = SSLFactory.builder()
+                        .withIdentityMaterial(identityPath, identityPassword)
+                        .withTrustMaterial(trustStorePath, trustStorePassword)
+                        .build();
 
-                KeyStore trustStore = KeyStoreUtils.loadKeyStore(trustStorePath, trustStorePassword);
-                X509ExtendedTrustManager trustManager = TrustManagerUtils.createTrustManager(trustStore);
-
-                sslService.updateSslMaterials(keyManager, trustManager);
+                sslService.updateSslMaterials(sslFactory.getKeyManager().orElseThrow(), sslFactory.getTrustManager().orElseThrow());
 
                 lastModifiedTimeIdentityStore = ZonedDateTime.ofInstant(identityAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC);
                 lastModifiedTimeTrustStore = ZonedDateTime.ofInstant(trustStoreAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC);
