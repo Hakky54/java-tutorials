@@ -18,7 +18,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         var sslFactory = SSLFactory.builder()
-                .withTrustMaterial(CertificateUtils.loadCertificate("isrg-root-x1.pem"))
+                .withTrustMaterial(CertificateUtils.loadCertificate("starfield-services-root-ca.pem"))
                 .build();
 
         var sslContextFactory = JettySslUtils.forClient(sslFactory);
