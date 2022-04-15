@@ -18,7 +18,8 @@ A repository containing different java tutorials
 - [Unit Testing Spring Boot Log4j2 logs with LogCaptor](log-captor-examples/log-captor-with-spring-boot-starter-log4j2)
 
 ## Security 🔐
-- [Instant Server SSL Reloading](instant-server-ssl-reloading)
+- [Instant Server SSL Reloading with Spring Boot and Jetty](instant-server-ssl-reloading)
+- [Instant Server SSL Reloading with Vert.x](instant-server-ssl-reloading-with-vertx/vertx-server)
 - [gRPC with SSL for Client and Server](grpc-client-server-with-ssl)
 - [ElasticSearch with SSL](elasticsearch-with-ssl)
 - [WebSocket Client with SSL](websocket-client-with-ssl)  

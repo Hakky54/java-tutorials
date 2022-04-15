@@ -17,6 +17,7 @@
         <module>websocket-client-with-ssl</module>
         <module>two-way-object-serialization</module>
         <module>spring-cn-validation-with-aop</module>
+        <module>instant-server-ssl-reloading-with-vertx</module>
     </modules>
 
     <licenses>
@@ -44,7 +45,7 @@
         <version.maven-surefire-plugin>3.0.0-M6</version.maven-surefire-plugin>
         <version.maven-fail-safe>3.0.0-M6</version.maven-fail-safe>
         <version.maven-compiler-plugin>3.10.1</version.maven-compiler-plugin>
-        <version.maven-shade-plugin>3.2.4</version.maven-shade-plugin>
+        <version.maven-shade-plugin>3.3.0</version.maven-shade-plugin>
         <version.os-maven-plugin>1.7.0</version.os-maven-plugin>
         <version.protobuf-maven-plugin>0.6.1</version.protobuf-maven-plugin>
         <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
@@ -66,6 +67,7 @@
         <version.javax.annotation-api>1.3.2</version.javax.annotation-api>
         <version.protoc>3.12.0</version.protoc>
         <version.websocket-client>9.4.46.v20220331</version.websocket-client>
+        <version.vertx>4.2.7</version.vertx>
         <version.assertj-core>3.22.0</version.assertj-core>
         <version.junit>5.8.2</version.junit>
         <version.mockito>4.4.0</version.mockito>
