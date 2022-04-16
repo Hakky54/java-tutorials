@@ -32,11 +32,6 @@ public class FileBasedSslUpdateService {
         LOGGER.info("Started listening for any changes on the keystore and truststore files...");
     }
 
-    /**
-     * Checks every 10 seconds if the keystore files have been updated.
-     * If the files have been updated the service will read the content and update the ssl material
-     * within the existing ssl configuration.
-     */
     public void updateSslMaterial() {
         try {
             if (Files.exists(identityPath) && Files.exists(trustStorePath)) {
