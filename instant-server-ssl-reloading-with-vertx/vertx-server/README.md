@@ -24,7 +24,7 @@ private static final char[] trustStorePassword = "secret".toCharArray();
 ```
 
 #### Start the server
-1. run `mvn clean install` on the root directory of this repository
+1. run `mvn clean install` on the [root directory of this repository](https://github.com/Hakky54/java-tutorials/)
 2. run `mvn exec:java` on the [vertx-server maven module](.)
 
 Visit the server with the following url on your browser: https://localhost:8443/
