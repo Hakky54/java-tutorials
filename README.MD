@@ -20,6 +20,7 @@ A repository containing different java tutorials
 ## Security 🔐
 - [Instant Server SSL Reloading with Spring Boot and Jetty](instant-server-ssl-reloading)
 - [Instant Server SSL Reloading with Vert.x](instant-server-ssl-reloading-with-vertx/vertx-server)
+- [Instant Server SSL Reloading with Netty](instant-server-ssl-reloading-with-netty/netty-server)
 - [gRPC with SSL for Client and Server](grpc-client-server-with-ssl)
 - [ElasticSearch with SSL](elasticsearch-with-ssl)
 - [WebSocket Client with SSL](websocket-client-with-ssl)  
