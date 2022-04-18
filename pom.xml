@@ -52,7 +52,7 @@
         <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <version.sslcontext-kickstart>7.4.0</version.sslcontext-kickstart>
+        <version.sslcontext-kickstart>7.4.1</version.sslcontext-kickstart>
         <version.logcaptor>2.7.9</version.logcaptor>
         <version.spring>2.6.6</version.spring>
         <version.aspectweaver>1.9.9.1</version.aspectweaver>
