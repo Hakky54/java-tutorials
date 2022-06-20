@@ -69,7 +69,7 @@
         <version.protoc>3.12.0</version.protoc>
         <version.websocket-client>9.4.46.v20220331</version.websocket-client>
         <version.vertx>4.3.1</version.vertx>
-        <version.netty>4.1.77.Final</version.netty>
+        <version.netty>4.1.78.Final</version.netty>
         <version.assertj-core>3.23.1</version.assertj-core>
         <version.junit>5.8.2</version.junit>
         <version.mockito>4.6.1</version.mockito>
