@@ -7,27 +7,8 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.net.ssl.SSLSessionContext;
-import javax.net.ssl.X509ExtendedKeyManager;
-import javax.net.ssl.X509ExtendedTrustManager;
-
 @Configuration
 public class SSLConfig {
-
-    @Bean
-    public X509ExtendedKeyManager keyManager(SSLFactory sslFactory) {
-        return sslFactory.getKeyManager().orElseThrow();
-    }
-
-    @Bean
-    public X509ExtendedTrustManager trustManager(SSLFactory sslFactory) {
-        return sslFactory.getTrustManager().orElseThrow();
-    }
-
-    @Bean
-    public SSLSessionContext serverSessionContext(SSLFactory sslFactory) {
-        return sslFactory.getSslContext().getServerSessionContext();
-    }
 
     @Bean
     public SSLFactory sslFactory(ApplicationProperty applicationProperty) {

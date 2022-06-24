@@ -8,7 +8,6 @@ import io.vertx.core.net.KeyCertOptions;
 import io.vertx.core.net.TrustOptions;
 import io.vertx.ext.web.Router;
 import nl.altindag.server.service.FileBasedSslUpdateService;
-import nl.altindag.server.service.SwappableSslService;
 import nl.altindag.ssl.SSLFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,8 +33,7 @@ public class MainVerticle extends AbstractVerticle {
                 .withTrustMaterial("truststore.jks", "secret".toCharArray())
                 .build();
 
-        var swappableSslService = new SwappableSslService(sslFactory);
-        var sslUpdateService = new FileBasedSslUpdateService(swappableSslService);
+        var sslUpdateService = new FileBasedSslUpdateService(sslFactory);
 
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(sslUpdateService::updateSslMaterial, 1, 1, TimeUnit.MINUTES);
         LOGGER.info("Checking every minute for changes on the keystore and truststore files");

@@ -1,8 +1,8 @@
 package nl.altindag.server.controller;
 
 import nl.altindag.server.model.SSLUpdateRequest;
-import nl.altindag.server.service.SwappableSslService;
 import nl.altindag.ssl.SSLFactory;
+import nl.altindag.ssl.util.SSLFactoryUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,10 +15,10 @@ import java.io.InputStream;
 @RestController
 public class AdminController {
 
-    private final SwappableSslService sslService;
+    private final SSLFactory baseSslFactory;
 
-    public AdminController(SwappableSslService sslService) {
-        this.sslService = sslService;
+    public AdminController(SSLFactory baseSslFactory) {
+        this.baseSslFactory = baseSslFactory;
     }
 
     @PostMapping(value = "/admin/ssl", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -26,12 +26,12 @@ public class AdminController {
         try (InputStream keyStoreStream = new ByteArrayInputStream(request.getKeyStore());
              InputStream trustStoreStream = new ByteArrayInputStream(request.getTrustStore())) {
 
-            SSLFactory sslFactory = SSLFactory.builder()
+            SSLFactory updatedSslFactory = SSLFactory.builder()
                     .withIdentityMaterial(keyStoreStream, request.getKeyStorePassword())
                     .withTrustMaterial(trustStoreStream, request.getTrustStorePassword())
                     .build();
 
-            sslService.updateSslMaterials(sslFactory.getKeyManager().orElseThrow(), sslFactory.getTrustManager().orElseThrow());
+            SSLFactoryUtils.reload(baseSslFactory, updatedSslFactory);
         }
     }
 

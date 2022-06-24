@@ -1,6 +1,7 @@
 package nl.altindag.server.service;
 
 import nl.altindag.ssl.SSLFactory;
+import nl.altindag.ssl.util.SSLFactoryUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -27,10 +28,10 @@ public class FileBasedSslUpdateService {
     private ZonedDateTime lastModifiedTimeIdentityStore = ZonedDateTime.ofInstant(Instant.EPOCH, ZoneOffset.UTC);
     private ZonedDateTime lastModifiedTimeTrustStore = ZonedDateTime.ofInstant(Instant.EPOCH, ZoneOffset.UTC);
 
-    private final SwappableSslService sslService;
+    private final SSLFactory baseSslFactory;
 
-    public FileBasedSslUpdateService(SwappableSslService sslService) {
-        this.sslService = sslService;
+    public FileBasedSslUpdateService(SSLFactory baseSslFactory) {
+        this.baseSslFactory = baseSslFactory;
     }
 
     /**
@@ -50,12 +51,12 @@ public class FileBasedSslUpdateService {
             if (identityUpdated && trustStoreUpdated) {
                 LOGGER.info("Keystore files have been changed. Trying to read the file content and preparing to update the ssl material");
 
-                SSLFactory sslFactory = SSLFactory.builder()
+                SSLFactory updatedSslFactory = SSLFactory.builder()
                         .withIdentityMaterial(identityPath, identityPassword)
                         .withTrustMaterial(trustStorePath, trustStorePassword)
                         .build();
 
-                sslService.updateSslMaterials(sslFactory.getKeyManager().orElseThrow(), sslFactory.getTrustManager().orElseThrow());
+                SSLFactoryUtils.reload(baseSslFactory, updatedSslFactory);
 
                 lastModifiedTimeIdentityStore = ZonedDateTime.ofInstant(identityAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC);
                 lastModifiedTimeTrustStore = ZonedDateTime.ofInstant(trustStoreAttributes.lastModifiedTime().toInstant(), ZoneOffset.UTC);

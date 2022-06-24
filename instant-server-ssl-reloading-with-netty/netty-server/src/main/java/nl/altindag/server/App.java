@@ -6,7 +6,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import nl.altindag.server.config.ServerInitializer;
 import nl.altindag.server.service.FileBasedSslUpdateService;
-import nl.altindag.server.service.SwappableSslService;
 import nl.altindag.ssl.SSLFactory;
 import nl.altindag.ssl.util.NettySslUtils;
 import org.slf4j.Logger;
@@ -49,8 +48,7 @@ public class App {
 
             LOGGER.info("Sever started on https://localhost:8443");
 
-            var swappableSslService = new SwappableSslService(sslFactory);
-            var sslUpdateService = new FileBasedSslUpdateService(swappableSslService);
+            var sslUpdateService = new FileBasedSslUpdateService(sslFactory);
 
             Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(sslUpdateService::updateSslMaterial, 1, 1, TimeUnit.MINUTES);
             LOGGER.info("Checking every minute for changes on the keystore and truststore files");
