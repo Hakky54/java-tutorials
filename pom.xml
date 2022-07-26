@@ -19,6 +19,7 @@
         <module>spring-cn-validation-with-aop</module>
         <module>instant-server-ssl-reloading-with-vertx</module>
         <module>instant-server-ssl-reloading-with-netty</module>
+        <module>console-captor-examples</module>
     </modules>
 
     <licenses>
