@@ -73,7 +73,7 @@
         <version.vertx>4.3.2</version.vertx>
         <version.netty>4.1.79.Final</version.netty>
         <version.assertj-core>3.23.1</version.assertj-core>
-        <version.junit>5.8.2</version.junit>
+        <version.junit>5.9.0</version.junit>
         <version.mockito>4.6.1</version.mockito>
         <version.consolecaptor>1.0.2</version.consolecaptor>
     </properties>
