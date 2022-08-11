@@ -72,6 +72,9 @@
         <version.websocket-client>9.4.48.v20220622</version.websocket-client>
         <version.vertx>4.3.2</version.vertx>
         <version.netty>4.1.79.Final</version.netty>
+        <quarkus.platform.version>2.11.2.Final</quarkus.platform.version>
+        <version.lombok>1.18.24</version.lombok>
+        <version.jboss-logging>3.5.0.Final</version.jboss-logging>
         <version.assertj-core>3.23.1</version.assertj-core>
         <version.junit>5.9.0</version.junit>
         <version.mockito>4.6.1</version.mockito>

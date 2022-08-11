@@ -6,6 +6,7 @@
 
     <modules>
         <module>console-captor-with-log4j-slf4j18</module>
+        <module>console-captor-with-quarkus-jboss-lombok</module>
     </modules>
 
     <parent>
