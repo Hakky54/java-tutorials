@@ -13,7 +13,7 @@ class AppIT {
             App.main(null);
 
             assertThat(consoleCaptor.getStandardOutput())
-                    .containsExactlyInAnyOrder(
+                    .contains(
                             "connected",
                             "Received the following message from the server: Hello there!",
                             "closed"
