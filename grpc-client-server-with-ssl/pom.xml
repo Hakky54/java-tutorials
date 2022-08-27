@@ -6,6 +6,7 @@
     <modules>
         <module>grpc-client</module>
         <module>grpc-server</module>
+        <module>instant-server-ssl-reloading-with-grpc</module>
         <module>common-proto</module>
     </modules>
 
