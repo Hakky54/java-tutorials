@@ -4,7 +4,7 @@ In a traditional server configuration a reboot of the server is required to appl
 A downtime is therefore unavoidable. This project demonstrates with a basic setup how update the server certificate from an external source without the need of restarting your server. In this way you can achieve zero downtime.
 
 The repository contains:
- - Server, based on Vert.x
+ - Server, based on gRPC with Netty
 
 ### SSL Updating entrypoint for the server:
 The server has currently one way to update the existing ssl material:
