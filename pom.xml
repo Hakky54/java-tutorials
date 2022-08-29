@@ -20,6 +20,7 @@
         <module>instant-server-ssl-reloading-with-vertx</module>
         <module>instant-server-ssl-reloading-with-netty</module>
         <module>console-captor-examples</module>
+        <module>instant-ssl-reloading-with-spring-jetty-database</module>
     </modules>
 
     <licenses>
@@ -79,6 +80,8 @@
         <version.junit>5.9.0</version.junit>
         <version.mockito>4.7.0</version.mockito>
         <version.consolecaptor>1.0.2</version.consolecaptor>
+        <version.postgresql>42.5.0</version.postgresql>
+        <version.testcontainers-postgresql>1.17.3</version.testcontainers-postgresql>
     </properties>
 
     <build>
