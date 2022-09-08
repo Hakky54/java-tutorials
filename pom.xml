@@ -61,7 +61,7 @@
         <version.spring>2.7.3</version.spring>
         <version.aspectweaver>1.9.9.1</version.aspectweaver>
         <version.jackson>2.13.4</version.jackson>
-        <version.slf4j>1.7.36</version.slf4j>
+        <version.slf4j>2.0.0</version.slf4j>
         <version.slf4j-simple>1.7.30</version.slf4j-simple>
         <version.log4j-core>2.18.0</version.log4j-core>
         <version.log4j-slf4j>2.18.0</version.log4j-slf4j>
