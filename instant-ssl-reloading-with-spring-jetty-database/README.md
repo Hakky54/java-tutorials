@@ -25,6 +25,6 @@ mvn exec:java
 
 #### Start the server
 ```
-mvn spring-boot:run -pl server
+mvn spring-boot:run
 ```
 Visit the server with the following url on your browser: https://localhost:8443/api/hello to view the certificate. It will be updated every 10 seconds, but this logic can be enhanced by validating if the content has been updated on the database before updating the server ssl configuration.
