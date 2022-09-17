@@ -11,7 +11,7 @@ The repository contains:
 The server has two ways to update the existing ssl material:
  - REST, see here for the implementation: [AdminController](server/src/main/java/nl/altindag/server/controller/AdminController.java)
  - File based aka file change listener, see here for the implementation: [FilesBasedSslUpdateService](server/src/main/java/nl/altindag/server/service/FileBasedSslUpdateService.java)
-
+ - Databased based, aka database change listener. This option is hosted in a separate module within this repository, see here: [Instant SSL Reloading With Database](https://github.com/Hakky54/java-tutorials/tree/main/instant-ssl-reloading-with-spring-jetty-database)
 #### Requirements
  - Java 11
  - Terminal
@@ -27,7 +27,7 @@ Open the certificate details in your browser by clicking on the lock logo (on Ch
 
 Please note down the expiration date. Afterwords you will compare it when you have run the admin application.
 
-#### Refresh the server certificates
+#### Refresh the server certificates with admin
 The admin will fetch the new keystores from the resource directory and will send it as a POST request to the server.
 Execute the following command to apply the instant ssl reloading
 ```
@@ -37,3 +37,20 @@ Refresh your browser tab and open the certificate details again and compare the 
 You should have a similar certificate detail as shown below:
 
 ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading/images/after-reloading.png?raw=true)
+
+#### Refresh the server certificates with the file listener
+The file based ssl update service will listen to changes on a specific file on the file system. Adjust the path to your identity and truststore within [FilesBasedSslUpdateService](server/src/main/java/nl/altindag/server/service/FileBasedSslUpdateService.java).
+```java
+private static final Path identityPath = Path.of("/path/to/your/identity.jks");
+private static final Path trustStorePath = Path.of("/path/to/your/truststore.jks");
+```
+Also change the passwords if it is different.
+```java
+private static final char[] identityPassword = "secret".toCharArray();
+private static final char[] trustStorePassword = "secret".toCharArray();
+```
+##### Start the server
+```
+mvn spring-boot:run -pl server
+```
+Adjust the content of the identity and truststore and after 10 seonds the cron job will be triggered to validate if the content has been changed, and it will update the ssl configuration if there are any changes on it.
