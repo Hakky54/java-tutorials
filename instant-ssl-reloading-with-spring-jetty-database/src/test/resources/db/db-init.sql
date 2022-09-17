@@ -1,6 +1,7 @@
 CREATE TABLE SSL_MATERIAL (
     
     id                      int,
+    updated_at              timestamp default current_timestamp,
     identity_content        text,
     identity_password       text,
     trusted_certificates    text,

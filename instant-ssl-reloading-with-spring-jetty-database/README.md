@@ -19,9 +19,8 @@ It will be calling the database every 10 seconds to get the ssl material. The ss
  - Docker
 
 #### Start the database
-```
-mvn exec:java
-```
+1. run `mvn clean install` on the [root directory of this repository](https://github.com/Hakky54/java-tutorials/)
+2. run `mvn exec:java` on the [instant-server-ssl-reloading-with-spring-jetty-database](.)
 
 #### Start the server
 ```

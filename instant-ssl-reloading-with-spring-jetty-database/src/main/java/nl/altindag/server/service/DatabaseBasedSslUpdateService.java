@@ -27,6 +27,9 @@ import org.springframework.stereotype.Service;
 
 import javax.net.ssl.X509ExtendedKeyManager;
 import javax.net.ssl.X509ExtendedTrustManager;
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 
 @Service
 public class DatabaseBasedSslUpdateService {
@@ -35,6 +38,8 @@ public class DatabaseBasedSslUpdateService {
 
     private final SSLFactory baseSslFactory;
     private final SSLMaterialRepository sslMaterialRepository;
+
+    private ZonedDateTime lastModifiedTime = ZonedDateTime.ofInstant(Instant.EPOCH, ZoneOffset.UTC);
 
     public DatabaseBasedSslUpdateService(SSLFactory baseSslFactory, SSLMaterialRepository sslMaterialRepository) {
         this.baseSslFactory = baseSslFactory;
@@ -47,10 +52,19 @@ public class DatabaseBasedSslUpdateService {
      */
     @Scheduled(cron = "*/10 * * * * *")
     private void updateSslMaterial() {
-        LOGGER.info("Starting to update ssl material");
+        LOGGER.info("Fetching ssl material...");
 
         SSLMaterial sslMaterial = sslMaterialRepository.findById(1L)
                 .orElseThrow();
+
+        ZonedDateTime sslMaterialUpdatedAt = ZonedDateTime.ofInstant(sslMaterial.getUpdatedAt().toInstant(), ZoneOffset.UTC);
+
+        if(sslMaterialUpdatedAt.isBefore(lastModifiedTime) || sslMaterialUpdatedAt.isEqual(lastModifiedTime)) {
+            LOGGER.info("No changes detected. Skipping of refreshing the ssl configuration");
+            return;
+        }
+
+        LOGGER.info("Changes detected. Starting to update ssl material and refreshing the ssl configuration");
 
         X509ExtendedKeyManager keyManager = PemUtils.parseIdentityMaterial(sslMaterial.getIdentityContent(), sslMaterial.getIdentityPassword().toCharArray());
         X509ExtendedTrustManager trustManager = PemUtils.parseTrustMaterial(sslMaterial.getTrustedCertificates());
@@ -62,7 +76,9 @@ public class DatabaseBasedSslUpdateService {
 
         SSLFactoryUtils.reload(baseSslFactory, updatedSslFactory);
 
-        LOGGER.info("Finished updating ssl material");
+        lastModifiedTime = sslMaterialUpdatedAt;
+
+        LOGGER.info("Finished updating ssl material and refreshing the ssl configuration");
     }
 
 }

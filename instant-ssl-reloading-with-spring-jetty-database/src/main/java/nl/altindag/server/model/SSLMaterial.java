@@ -16,6 +16,7 @@
 package nl.altindag.server.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "SSL_MATERIAL")
@@ -25,9 +26,18 @@ public class SSLMaterial {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
+    private Timestamp updatedAt;
     private String identityContent;
     private String identityPassword;
     private String trustedCertificates;
+
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Timestamp createdAt) {
+        this.updatedAt = createdAt;
+    }
 
     public String getIdentityContent() {
         return identityContent;
