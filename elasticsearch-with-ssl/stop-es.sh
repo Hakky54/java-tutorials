@@ -10,5 +10,3 @@ forceCleanUpInstances() {
 
 cd elasticsearch-docker
 stopExistingInstances
-forceCleanUpInstances
-stopExistingInstances
