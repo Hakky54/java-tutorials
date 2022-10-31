@@ -56,7 +56,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <license.git.copyrightYears>2022</license.git.copyrightYears>
 
-        <version.sslcontext-kickstart>7.4.6</version.sslcontext-kickstart>
+        <version.sslcontext-kickstart>7.4.8</version.sslcontext-kickstart>
         <version.logcaptor>2.7.10</version.logcaptor>
         <version.spring>2.7.5</version.spring>
         <version.aspectweaver>1.9.9.1</version.aspectweaver>
