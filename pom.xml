@@ -83,7 +83,7 @@
         <version.mockito>4.8.1</version.mockito>
         <version.consolecaptor>1.0.2</version.consolecaptor>
         <version.postgresql>42.5.0</version.postgresql>
-        <version.testcontainers-postgresql>1.17.5</version.testcontainers-postgresql>
+        <version.testcontainers-postgresql>1.17.6</version.testcontainers-postgresql>
     </properties>
 
     <build>
