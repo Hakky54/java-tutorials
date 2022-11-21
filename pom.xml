@@ -80,7 +80,7 @@
         <version.jboss-logging>3.5.0.Final</version.jboss-logging>
         <version.assertj-core>3.23.1</version.assertj-core>
         <version.junit>5.9.1</version.junit>
-        <version.mockito>4.8.1</version.mockito>
+        <version.mockito>4.9.0</version.mockito>
         <version.consolecaptor>1.0.2</version.consolecaptor>
         <version.postgresql>42.5.0</version.postgresql>
         <version.testcontainers-postgresql>1.17.5</version.testcontainers-postgresql>
