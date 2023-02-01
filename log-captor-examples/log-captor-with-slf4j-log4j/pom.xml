@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
             <version>${version.log4j-slf4j}</version>
         </dependency>
     </dependencies>
@@ -30,7 +30,7 @@
                 <version>${version.maven-surefire-plugin}</version>
                 <configuration>
                     <classpathDependencyExcludes>
-                        <classpathDependencyExclude>org.apache.logging.log4j:log4j-slf4j-impl</classpathDependencyExclude>
+                        <classpathDependencyExclude>org.apache.logging.log4j:log4j-slf4j2-impl</classpathDependencyExclude>
                     </classpathDependencyExcludes>
                 </configuration>
             </plugin>
