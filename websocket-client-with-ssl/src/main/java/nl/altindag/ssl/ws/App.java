@@ -21,7 +21,6 @@ import nl.altindag.ssl.util.JettySslUtils;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketListener;
-import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
 
 import java.net.URI;
@@ -30,11 +29,11 @@ import java.util.concurrent.TimeUnit;
 public class App {
 
     // get new api key from https://www.piesocket.com/websocket-tester
-    public static final String WEBSOCKET_SERVER = "wss://demo.piesocket.com/v3/channel_1?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self";
+    public static final String WEBSOCKET_SERVER = "wss://demo.piesocket.com/v3/channel_123?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self";
 
     public static void main(String[] args) throws Exception {
         var sslFactory = SSLFactory.builder()
-                .withTrustMaterial(CertificateUtils.loadCertificate("starfield-services-root-ca.pem"))
+                .withTrustMaterial(CertificateUtils.loadCertificate("trusted-certificates.pem"))
                 .build();
 
         var sslContextFactory = JettySslUtils.forClient(sslFactory);

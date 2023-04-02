@@ -30,7 +30,7 @@ class AppIT {
             assertThat(consoleCaptor.getStandardOutput())
                     .contains(
                             "connected",
-                            "Received the following message from the server: Hello there!",
+                            "Received the following message from the server: {\"error\":\"Unknown api key\"}",
                             "closed"
                     );
 
