@@ -11,6 +11,7 @@
         <module>log-captor-with-spring-boot-starter-log4j2</module>
         <module>log-captor-with-jboss-and-lombok</module>
         <module>log-captor-with-quarkus-jboss-lombok</module>
+        <module>log-captor-with-flogger</module>
     </modules>
 
     <parent>

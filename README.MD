@@ -15,6 +15,7 @@ A repository containing different java tutorials
 - [Unit Testing Log4J logs with LogCaptor](log-captor-examples/log-captor-with-log4j-core)
 - [Unit Testing SLF4J Logback logs with LogCaptor](log-captor-examples/log-captor-with-slf4j-logback-classic)
 - [Unit Testing SLF4J Log4j logs with LogCaptor](log-captor-examples/log-captor-with-slf4j-log4j)
+- [Unit Testing Flogger logs with LogCaptor](log-captor-examples/log-captor-with-flogger)
 - [Unit Testing Spring Boot Log4j2 logs with LogCaptor](log-captor-examples/log-captor-with-spring-boot-starter-log4j2)
 - [Unit Testing Jboss logs while using Lombok with LogCaptor](log-captor-examples/log-captor-with-jboss-and-lombok)
 - [Unit testing logs with ConsoleCaptor while using log4j-slf4j18-impl](console-captor-examples/console-captor-with-log4j-slf4j18)
