@@ -17,14 +17,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          cache: 'maven'
 
       - name: Build and test
         run: mvn clean verify --no-transfer-progress
