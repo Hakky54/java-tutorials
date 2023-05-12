@@ -23,7 +23,9 @@ import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketListener;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
 
+import javax.net.ssl.SSLHandshakeException;
 import java.net.URI;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 public class App {
@@ -42,7 +44,17 @@ public class App {
         webSocketClient.start();
 
         MyWebSocketListener webSocketListener = new MyWebSocketListener();
-        var session = webSocketClient.connect(webSocketListener, new URI(WEBSOCKET_SERVER)).get();
+        Session session;
+        try {
+            session = webSocketClient.connect(webSocketListener, new URI(WEBSOCKET_SERVER)).get();
+        } catch (ExecutionException e) {
+            if (e.getCause() instanceof SSLHandshakeException) {
+                throw new RuntimeException("It seems like the certificates of the target websocket have been expired. " +
+                        "Please updated the list of trusted certificates in the resources directory of this project.", e);
+            } else {
+                throw e;
+            }
+        }
         session.getRemote().sendString("Hello there!");
 
         // waiting till the server response before closing the client
