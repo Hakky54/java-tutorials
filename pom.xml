@@ -21,6 +21,7 @@
         <module>instant-server-ssl-reloading-with-netty</module>
         <module>console-captor-examples</module>
         <module>instant-ssl-reloading-with-spring-jetty-database</module>
+        <module>instant-server-ssl-reloading-with-quarkus</module>
     </modules>
 
     <licenses>
@@ -76,6 +77,7 @@
         <version.websocket-client>9.4.50.v20221201</version.websocket-client>
         <version.vertx>4.3.7</version.vertx>
         <version.netty>4.1.86.Final</version.netty>
+        <version.quarkus>3.0.3.Final</version.quarkus>
         <quarkus.platform.version>2.15.1.Final</quarkus.platform.version>
         <version.lombok>1.18.24</version.lombok>
         <version.jboss-logging>3.5.0.Final</version.jboss-logging>

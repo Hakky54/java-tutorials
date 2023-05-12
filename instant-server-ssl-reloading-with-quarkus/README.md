@@ -4,7 +4,7 @@ In a traditional server configuration a reboot of the server is required to appl
 A downtime is therefore unavoidable. This project demonstrates with a basic setup how update the server certificate from an external source without the need of restarting your server. In this way you can achieve zero downtime.
 
 The repository contains:
- - Server, based on Vert.x
+ - Server, based on Quarkus
 
 ### SSL Updating entrypoint for the server:
 The server has currently one way to update the existing ssl material:
@@ -25,9 +25,9 @@ private static final char[] trustStorePassword = "secret".toCharArray();
 
 #### Start the server
 1. run `mvn clean install` on the [root directory of this repository](https://github.com/Hakky54/java-tutorials/)
-2. run `mvn exec:java` on the [vertx-server maven module](.)
+2. run `mvn quarkus:dev` on the [quarkus-server maven module](.)
 
-Visit the server with the following url on your browser: https://localhost:8443/
+Visit the server with the following url on your browser: https://localhost:8443/hello
 Open the certificate details in your browser by clicking on the lock logo (on Chrome). You will see a similar certificate detail as shown below:
 
 ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading-with-vertx/vertx-server/images/before-reloading.png?raw=true)
@@ -39,4 +39,4 @@ Wait for one minute and if the keystores are found and have been updated, then t
 Refresh your browser tab and open the certificate details again and compare the expiration date with the one you have noted down.
 You should have a similar certificate detail as shown below:
 
-![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading-with-vertx/vertx-server/images/after-reloading.png?raw=true)
+![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading-with-quarkus/images/after-reloading.png?raw=true)

@@ -35,7 +35,7 @@ Open the certificate details in your browser by clicking on the lock logo (on Ch
 Please note down the expiration date. Afterwords you will compare it when you have run the admin application.
 
 #### Refresh the server certificates
-Wait for one minute and if the keystores are found and have been updated, than the ssl configuration will be updated.
+Wait for one minute and if the keystores are found and have been updated, then the ssl configuration will be updated.
 Refresh your browser tab and open the certificate details again and compare the expiration date with the one you have noted down.
 You should have a similar certificate detail as shown below:
 

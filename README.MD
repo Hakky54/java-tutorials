@@ -28,6 +28,7 @@ A repository containing different java tutorials
 - [Instant Server SSL Reloading with Netty](instant-server-ssl-reloading-with-netty/netty-server)
 - [Instant Server SSL Reloading with gRPC](grpc-client-server-with-ssl/instant-server-ssl-reloading-with-grpc)
 - [Instant Server SSL Reloading with Spring Boot and Jetty and Database](instant-ssl-reloading-with-spring-jetty-database)
+- [Instant Server SSL Reloading with Quarkus](instant-server-ssl-reloading-with-quarkus)
 - [gRPC with SSL for Client and Server](grpc-client-server-with-ssl)
 - [ElasticSearch with SSL](elasticsearch-with-ssl)
 - [WebSocket Client with SSL](websocket-client-with-ssl)  
