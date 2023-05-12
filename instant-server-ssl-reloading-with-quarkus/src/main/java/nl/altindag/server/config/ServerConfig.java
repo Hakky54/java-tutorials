@@ -62,6 +62,7 @@ public class ServerConfig implements HttpServerOptionsCustomizer {
             LOGGER.info("Checking every minute for changes on the keystore and truststore files");
 
             options.setSsl(true)
+                    .setPort(8443)
                     .setKeyCertOptions(KeyCertOptions.wrap(sslFactory.getKeyManager().orElseThrow()))
                     .setTrustOptions(TrustOptions.wrap(sslFactory.getTrustManager().orElseThrow()));
 
