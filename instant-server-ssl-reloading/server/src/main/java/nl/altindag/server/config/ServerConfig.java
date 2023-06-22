@@ -15,7 +15,6 @@
  */
 package nl.altindag.server.config;
 
-import nl.altindag.server.model.ApplicationProperty;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
@@ -32,30 +31,12 @@ import java.util.Collections;
 public class ServerConfig {
 
     @Bean
-    public ApplicationProperty applicationProperty(
-            @Value("${server.port}") int serverPort,
-            @Value("${ssl.client-auth}") boolean isClientAuthenticationRequired,
-            @Value("${ssl.keystore-path}") String keyStorePath,
-            @Value("${ssl.keystore-password}") char[] keyStorePassword,
-            @Value("${ssl.truststore-path}") String trustStorePath,
-            @Value("${ssl.truststore-password}") char[] trustStorePassword) {
-
-        return new ApplicationProperty()
-                .withServerPort(serverPort)
-                .withSslClientAuth(isClientAuthenticationRequired)
-                .withKeystorePath(keyStorePath)
-                .withKeystorePassword(keyStorePassword)
-                .withTruststorePath(trustStorePath)
-                .withTruststorePassword(trustStorePassword);
-    }
-
-    @Bean
-    public ConfigurableServletWebServerFactory webServerFactory(SslContextFactory.Server sslContextFactory, ApplicationProperty applicationProperty) {
+    public ConfigurableServletWebServerFactory webServerFactory(SslContextFactory.Server sslContextFactory, @Value("${server.port}") int serverPort) {
         JettyServletWebServerFactory factory = new JettyServletWebServerFactory();
 
         JettyServerCustomizer jettyServerCustomizer = server -> {
             ServerConnector serverConnector = new ServerConnector(server, sslContextFactory);
-            serverConnector.setPort(applicationProperty.getServerPort());
+            serverConnector.setPort(serverPort);
             server.setConnectors(new Connector[]{serverConnector});
         };
         factory.setServerCustomizers(Collections.singletonList(jettyServerCustomizer));

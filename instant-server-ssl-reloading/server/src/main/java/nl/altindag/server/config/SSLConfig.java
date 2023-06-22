@@ -15,10 +15,10 @@
  */
 package nl.altindag.server.config;
 
-import nl.altindag.server.model.ApplicationProperty;
 import nl.altindag.ssl.SSLFactory;
 import nl.altindag.ssl.util.JettySslUtils;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -26,13 +26,18 @@ import org.springframework.context.annotation.Configuration;
 public class SSLConfig {
 
     @Bean
-    public SSLFactory sslFactory(ApplicationProperty applicationProperty) {
+    public SSLFactory sslFactory(@Value("${ssl.keystore-path}") String keyStorePath,
+                                 @Value("${ssl.keystore-password}") char[] keyStorePassword,
+                                 @Value("${ssl.truststore-path}") String trustStorePath,
+                                 @Value("${ssl.truststore-password}") char[] trustStorePassword,
+                                 @Value("${ssl.client-auth}") boolean isClientAuthenticationRequired) {
+
         return SSLFactory.builder()
                 .withSwappableIdentityMaterial()
-                .withIdentityMaterial(applicationProperty.getKeystorePath(), applicationProperty.getKeystorePassword())
                 .withSwappableTrustMaterial()
-                .withTrustMaterial(applicationProperty.getTruststorePath(), applicationProperty.getTruststorePassword())
-                .withNeedClientAuthentication(applicationProperty.isSslClientAuth())
+                .withIdentityMaterial(keyStorePath, keyStorePassword)
+                .withTrustMaterial(trustStorePath, trustStorePassword)
+                .withNeedClientAuthentication(isClientAuthenticationRequired)
                 .build();
     }
 
