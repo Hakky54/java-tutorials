@@ -17,7 +17,7 @@ package nl.altindag.ssl.ws;
 
 import nl.altindag.ssl.SSLFactory;
 import nl.altindag.ssl.util.CertificateUtils;
-import nl.altindag.ssl.util.JettySslUtils;
+import nl.altindag.ssl.jetty.util.JettySslUtils;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketListener;

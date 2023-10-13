@@ -24,7 +24,7 @@ import nl.altindag.grpc.HelloRequest;
 import nl.altindag.grpc.HelloResponse;
 import nl.altindag.grpc.HelloServiceGrpc;
 import nl.altindag.ssl.SSLFactory;
-import nl.altindag.ssl.util.NettySslUtils;
+import nl.altindag.ssl.netty.util.NettySslUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

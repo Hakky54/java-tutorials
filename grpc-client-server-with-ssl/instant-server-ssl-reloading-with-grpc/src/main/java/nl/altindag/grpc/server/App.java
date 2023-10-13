@@ -21,7 +21,7 @@ import io.grpc.netty.NettyServerBuilder;
 import nl.altindag.grpc.server.service.FileBasedSslUpdateService;
 import nl.altindag.grpc.server.service.HelloServiceImpl;
 import nl.altindag.ssl.SSLFactory;
-import nl.altindag.ssl.util.NettySslUtils;
+import nl.altindag.ssl.netty.util.NettySslUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

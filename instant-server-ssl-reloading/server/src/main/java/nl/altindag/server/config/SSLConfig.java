@@ -16,7 +16,7 @@
 package nl.altindag.server.config;
 
 import nl.altindag.ssl.SSLFactory;
-import nl.altindag.ssl.util.JettySslUtils;
+import nl.altindag.ssl.jetty.util.JettySslUtils;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -18,7 +18,7 @@ package nl.altindag.server.service;
 import nl.altindag.server.model.SSLMaterial;
 import nl.altindag.server.repository.SSLMaterialRepository;
 import nl.altindag.ssl.SSLFactory;
-import nl.altindag.ssl.util.PemUtils;
+import nl.altindag.ssl.pem.util.PemUtils;
 import nl.altindag.ssl.util.SSLFactoryUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

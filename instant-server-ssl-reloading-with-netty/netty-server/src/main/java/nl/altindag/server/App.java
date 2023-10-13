@@ -22,7 +22,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import nl.altindag.server.config.ServerInitializer;
 import nl.altindag.server.service.FileBasedSslUpdateService;
 import nl.altindag.ssl.SSLFactory;
-import nl.altindag.ssl.util.NettySslUtils;
+import nl.altindag.ssl.netty.util.NettySslUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
