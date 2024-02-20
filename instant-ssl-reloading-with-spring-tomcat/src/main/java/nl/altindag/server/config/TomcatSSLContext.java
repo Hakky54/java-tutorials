@@ -18,7 +18,12 @@ package nl.altindag.server.config;
 import nl.altindag.ssl.SSLFactory;
 import org.apache.tomcat.util.net.SSLContext;
 
-import javax.net.ssl.*;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLEngine;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLServerSocketFactory;
+import javax.net.ssl.SSLSessionContext;
+import javax.net.ssl.TrustManager;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 
