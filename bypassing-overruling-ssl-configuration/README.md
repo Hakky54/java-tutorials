@@ -22,7 +22,7 @@ docker run -it -p 33060:3306 --name hakky54-mysql -e MYSQL_ROOT_PASSWORD='secret
 mvn exec:java
 ```
 
-If you happen to run this project in your IDE, please ad a breakpoint at `com.mysql.cj.protocol.ExportControlled` on line number `617` You will see that a custom SSLContext is being used which is constructed by this project itself. See also the screenshot below.
+If you happen to run this project in your IDE, please add a breakpoint at `com.mysql.cj.protocol.ExportControlled` on line number `617` You will see that a custom SSLContext is being used which is constructed by this project itself. See also the screenshot below.
 
 ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/bypassing-overruling-ssl-configuration/images/demo.png?raw=true)
 
