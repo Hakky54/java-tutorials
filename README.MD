@@ -35,6 +35,7 @@ A repository containing different java tutorials
 - [WebSocket Client with SSL](websocket-client-with-ssl)  
 - [Spring Boot Reactive Server with Common Name Validation based on Spring Security](spring-security-cn-validation-for-reactive-server)
 - [Spring Boot Server with Common Name Validation based on AOP with AspectJ Weaver](spring-cn-validation-with-aop)
+- [Bypassing and overruling SSL configuration of libraries](bypassing-overruling-ssl-configuration)
 
 ## Serialization & Deserialization ☢️
 - [Two-way object serialization while using one model with Jackson and Spring Boot](two-way-object-serialization)

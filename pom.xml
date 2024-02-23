@@ -23,6 +23,7 @@
         <module>instant-ssl-reloading-with-spring-jetty-database</module>
         <module>instant-server-ssl-reloading-with-quarkus</module>
         <module>instant-ssl-reloading-with-spring-tomcat</module>
+        <module>bypassing-overruling-ssl-configuration</module>
     </modules>
 
     <licenses>
@@ -58,7 +59,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <license.git.copyrightYears>2022</license.git.copyrightYears>
 
-        <version.sslcontext-kickstart>8.3.1</version.sslcontext-kickstart>
+        <version.sslcontext-kickstart>8.3.2</version.sslcontext-kickstart>
         <version.logcaptor>2.9.0</version.logcaptor>
         <version.spring>2.7.5</version.spring>
         <version-tomcat>9.0.86</version-tomcat>
@@ -80,6 +81,7 @@
         <version.vertx>4.3.7</version.vertx>
         <version.netty>4.1.86.Final</version.netty>
         <version.quarkus>3.0.3.Final</version.quarkus>
+        <version.mysql-connector>8.3.0</version.mysql-connector>
         <version.lombok>1.18.24</version.lombok>
         <version.jboss-logging>3.5.0.Final</version.jboss-logging>
         <version.assertj-core>3.23.1</version.assertj-core>
