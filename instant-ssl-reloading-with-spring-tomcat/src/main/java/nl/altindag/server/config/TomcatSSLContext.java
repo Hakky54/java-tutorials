@@ -15,24 +15,27 @@
  */
 package nl.altindag.server.config;
 
-import nl.altindag.ssl.SSLFactory;
-import org.apache.tomcat.util.net.SSLContext;
-
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLEngine;
 import javax.net.ssl.SSLParameters;
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSessionContext;
 import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509KeyManager;
+import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 
-public final class TomcatSSLContext implements SSLContext {
+public final class TomcatSSLContext implements org.apache.tomcat.util.net.SSLContext {
 
-    private final SSLFactory sslFactory;
+    private final javax.net.ssl.SSLContext sslContext;
+    private final X509KeyManager keyManager;
+    private final X509TrustManager trustManager;
 
-    public TomcatSSLContext(SSLFactory sslFactory) {
-        this.sslFactory = sslFactory;
+    public TomcatSSLContext(javax.net.ssl.SSLContext sslContext, X509KeyManager keyManager, X509TrustManager trustManager) {
+        this.sslContext = sslContext;
+        this.keyManager = keyManager;
+        this.trustManager = trustManager;
     }
 
     @Override
@@ -47,34 +50,32 @@ public final class TomcatSSLContext implements SSLContext {
 
     @Override
     public SSLSessionContext getServerSessionContext() {
-        return sslFactory.getSslContext().getServerSessionContext();
+        return sslContext.getServerSessionContext();
     }
 
     @Override
     public SSLEngine createSSLEngine() {
-        return sslFactory.getSSLEngine();
+        return sslContext.createSSLEngine();
     }
 
     @Override
     public SSLServerSocketFactory getServerSocketFactory() {
-        return sslFactory.getSslServerSocketFactory();
+        return sslContext.getServerSocketFactory();
     }
 
     @Override
     public SSLParameters getSupportedSSLParameters() {
-        return sslFactory.getSslParameters();
+        return sslContext.getSupportedSSLParameters();
     }
 
     @Override
     public X509Certificate[] getCertificateChain(String alias) {
-        return sslFactory.getKeyManager()
-                .map(keyManager -> keyManager.getCertificateChain(alias))
-                .orElseThrow();
+        return keyManager.getCertificateChain(alias);
     }
 
     @Override
     public X509Certificate[] getAcceptedIssuers() {
-        return sslFactory.getTrustedCertificates().toArray(new X509Certificate[0]);
+        return trustManager.getAcceptedIssuers();
     }
 
 }

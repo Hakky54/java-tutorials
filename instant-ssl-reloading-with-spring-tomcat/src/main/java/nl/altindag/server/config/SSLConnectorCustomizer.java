@@ -18,6 +18,7 @@ package nl.altindag.server.config;
 import nl.altindag.ssl.SSLFactory;
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.AbstractHttp11Protocol;
+import org.apache.tomcat.util.net.SSLContext;
 import org.apache.tomcat.util.net.SSLHostConfig;
 import org.apache.tomcat.util.net.SSLHostConfigCertificate;
 import org.apache.tomcat.util.net.SSLHostConfigCertificate.Type;
@@ -47,7 +48,12 @@ public class SSLConnectorCustomizer implements TomcatConnectorCustomizer {
 
         SSLHostConfig sslHostConfig = new SSLHostConfig();
         SSLHostConfigCertificate certificate = new SSLHostConfigCertificate(sslHostConfig, Type.UNDEFINED);
-        certificate.setSslContext(new TomcatSSLContext(sslFactory));
+        SSLContext sslContext = new TomcatSSLContext(
+                sslFactory.getSslContext(),
+                sslFactory.getKeyManager().orElseThrow(),
+                sslFactory.getTrustManager().orElseThrow()
+        );
+        certificate.setSslContext(sslContext);
         sslHostConfig.addCertificate(certificate);
         protocol.addSslHostConfig(sslHostConfig);
     }
