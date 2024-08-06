@@ -17,6 +17,7 @@ package nl.altindag.quarkus.resource;
 
 import io.quarkus.test.junit.QuarkusTest;
 import nl.altindag.log.LogCaptor;
+import nl.altindag.log.exception.LogCaptorException;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -29,7 +30,7 @@ public class GreetingsResourceWithQuarkusTestShould {
     @Test
     void capturingLogFailsBecauseOfDifferentClassloadersFromQuarkusTest() {
         assertThatThrownBy(LogCaptor::forRoot)
-                .isInstanceOf(IllegalArgumentException.class)
+                .isInstanceOf(LogCaptorException.class)
                 .hasMessageContaining("Multiple classloaders are being used. " +
                         "The Logging API is created by the following classloader: [jdk.internal.loader.ClassLoaders$AppClassLoader], " +
                         "while it should have been created by the following classloader: [io.quarkus.bootstrap.classloading.QuarkusClassLoader].");

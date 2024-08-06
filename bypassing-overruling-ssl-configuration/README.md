@@ -6,7 +6,7 @@ This projects demonstrates bypassing the ssl configuration of mysql-connector-j 
 This mechanism will also work with other libraries.
 
 #### Requirements
-- Java 11
+- Java 17
 - Terminal
 - Docker
 

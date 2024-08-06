@@ -35,7 +35,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>${version.slf4j-simple}</version>
+            <version>${version.slf4j}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

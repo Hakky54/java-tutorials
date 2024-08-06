@@ -26,6 +26,11 @@
                 <version>${version.spring}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>${version.aspectweaver}</version>
@@ -39,7 +44,7 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
-                <version>${version.slf4j-simple}</version>
+                <version>${version.slf4j}</version>
             </dependency>
 
             <dependency>

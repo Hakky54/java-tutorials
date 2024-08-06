@@ -13,7 +13,7 @@ The server has two ways to update the existing ssl material:
  - File based aka file change listener, see here for the implementation: [FilesBasedSslUpdateService](server/src/main/java/nl/altindag/server/service/FileBasedSslUpdateService.java)
  - Databased based, aka database change listener. This option is hosted in a separate module within this repository, see here: [Instant SSL Reloading With Database](https://github.com/Hakky54/java-tutorials/tree/main/instant-ssl-reloading-with-spring-jetty-database)
 #### Requirements
- - Java 11
+ - Java 17
  - Terminal
 
 #### Start the server

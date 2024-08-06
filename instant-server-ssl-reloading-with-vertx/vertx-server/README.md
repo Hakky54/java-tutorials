@@ -11,7 +11,7 @@ The server has currently one way to update the existing ssl material:
  - File based aka file change listener, see here for the implementation: [FilesBasedSslUpdateService](src/main/java/nl/altindag/server/service/FileBasedSslUpdateService.java)
 
 #### Requirements
- - Java 11
+ - Java 17
  - Terminal
 
 #### Configure SSL Update Service
