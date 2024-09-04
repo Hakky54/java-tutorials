@@ -4,7 +4,7 @@
 A repository containing different java tutorials
 
 **Minimum requirements:**
-1. Java 17
+1. Java 21
 2. Maven 3.5.0
 3. Eclipse, Intellij IDEA (or any other text editor like VIM)
 4. A terminal
@@ -36,6 +36,7 @@ A repository containing different java tutorials
 - [Spring Boot Reactive Server with Common Name Validation based on Spring Security](spring-security-cn-validation-for-reactive-server)
 - [Spring Boot Server with Common Name Validation based on AOP with AspectJ Weaver](spring-cn-validation-with-aop)
 - [Bypassing and overruling SSL configuration of libraries](bypassing-overruling-ssl-configuration)
+- [Prompting to trust an unknown certificate in a GUI and reloading the ssl configuration](trust-me)
 
 ## Serialization & Deserialization ☢️
 - [Two-way object serialization while using one model with Jackson and Spring Boot](two-way-object-serialization)

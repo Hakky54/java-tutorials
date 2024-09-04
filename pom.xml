@@ -24,6 +24,7 @@
         <module>instant-server-ssl-reloading-with-quarkus</module>
         <module>instant-ssl-reloading-with-spring-tomcat</module>
         <module>bypassing-overruling-ssl-configuration</module>
+        <module>trust-me</module>
     </modules>
 
     <licenses>
@@ -47,7 +48,7 @@
     </developers>
 
     <properties>
-        <version.java>11</version.java>
+        <version.java>21</version.java>
         <version.maven-surefire-plugin>3.0.0-M7</version.maven-surefire-plugin>
         <version.maven-fail-safe>3.0.0-M7</version.maven-fail-safe>
         <version.maven-compiler-plugin>3.10.1</version.maven-compiler-plugin>
@@ -62,6 +63,7 @@
         <version.sslcontext-kickstart>8.3.6</version.sslcontext-kickstart>
         <version.logcaptor>2.9.3</version.logcaptor>
         <version.spring>3.3.2</version.spring>
+        <version.javafx>21.0.3</version.javafx>
         <version-tomcat>10.1.26</version-tomcat>
         <version.aspectweaver>1.9.22.1</version.aspectweaver>
         <version.jackson>2.17.2</version.jackson>
@@ -86,8 +88,9 @@
         <version.assertj-core>3.23.1</version.assertj-core>
         <version.junit>5.10.3</version.junit>
         <version.junit-platform>1.10.3</version.junit-platform>
-        <version.mockito>5.12.0</version.mockito>
+        <version.mockito>5.13.0</version.mockito>
         <version.mockito-inline>5.2.0</version.mockito-inline>
+        <version.byte-buddy>1.15.1</version.byte-buddy>
         <version.consolecaptor>1.0.3</version.consolecaptor>
         <version.postgresql>42.5.0</version.postgresql>
         <version.testcontainers-postgresql>1.17.3</version.testcontainers-postgresql>
