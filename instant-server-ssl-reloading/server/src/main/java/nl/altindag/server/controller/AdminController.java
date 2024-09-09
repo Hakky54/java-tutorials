@@ -18,6 +18,8 @@ package nl.altindag.server.controller;
 import nl.altindag.server.model.SSLUpdateRequest;
 import nl.altindag.ssl.SSLFactory;
 import nl.altindag.ssl.util.SSLFactoryUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +32,8 @@ import java.io.InputStream;
 @RestController
 public class AdminController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminController.class);
+
     private final SSLFactory baseSslFactory;
 
     public AdminController(SSLFactory baseSslFactory) {
@@ -37,16 +41,17 @@ public class AdminController {
     }
 
     @PostMapping(value = "/admin/ssl", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void updateKeyManager(@RequestBody SSLUpdateRequest request) throws IOException {
-        try (InputStream keyStoreStream = new ByteArrayInputStream(request.getKeyStore());
-             InputStream trustStoreStream = new ByteArrayInputStream(request.getTrustStore())) {
+    public void updateSslMaterial(@RequestBody SSLUpdateRequest request) throws IOException {
+        try (InputStream keyStoreStream = new ByteArrayInputStream(request.keyStore());
+             InputStream trustStoreStream = new ByteArrayInputStream(request.trustStore())) {
 
             SSLFactory updatedSslFactory = SSLFactory.builder()
-                    .withIdentityMaterial(keyStoreStream, request.getKeyStorePassword())
-                    .withTrustMaterial(trustStoreStream, request.getTrustStorePassword())
+                    .withIdentityMaterial(keyStoreStream, request.keyStorePassword())
+                    .withTrustMaterial(trustStoreStream, request.trustStorePassword())
                     .build();
 
             SSLFactoryUtils.reload(baseSslFactory, updatedSslFactory);
+            LOGGER.info("Updated server ssl material");
         }
     }
 
