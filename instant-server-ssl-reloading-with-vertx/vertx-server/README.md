@@ -10,7 +10,7 @@ The repository contains:
 The server has currently one way to update the existing ssl material:
 - File based aka file change listener, see here for the implementation: [FilesBasedSslUpdateService](src/main/java/nl/altindag/server/service/FileBasedSslUpdateService.java)
 
-- REST, This option is hosted in a separate module within this repository, see here: [AdminController]((https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading/server/src/main/java/nl/altindag/server/controller/AdminController.java)
+- REST, This option is hosted in a separate module within this repository, see here: [AdminController](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading/server/src/main/java/nl/altindag/server/controller/AdminController.java)
 - Databased based, aka database change listener. This option is hosted in a separate module within this repository, see here: [Instant SSL Reloading With Database](https://github.com/Hakky54/java-tutorials/tree/main/instant-ssl-reloading-with-spring-jetty-database)
 
 #### Requirements
