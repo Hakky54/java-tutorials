@@ -14,7 +14,7 @@ It will be calling the database every 10 seconds to get the ssl material. The ss
  - [DatabaseBasedSslUpdateService](src/main/java/nl/altindag/server/service/DatabaseBasedSslUpdateService.java)
 
 #### Requirements
- - Java 17
+ - Java 21
  - Terminal
  - Docker
 

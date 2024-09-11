@@ -9,7 +9,7 @@ The flow would be like the diagram below:
 ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/two-way-object-serialization/images/flow.png?raw=true)
 
 #### Requirements
- - Java 17
+ - Java 21
  - Terminal
 
 #### Start the server

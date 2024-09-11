@@ -1,7 +1,7 @@
 # ElasticSearch with SSL 🔐
 
 #### Requirements
- - Java 17
+ - Java 21
  - Terminal
  - Docker 
  - Eclipse or Intellij IDEA

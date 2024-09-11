@@ -14,7 +14,7 @@ The server has currently one way to update the existing ssl material:
 - Databased based, aka database change listener. This option is hosted in a separate module within this repository, see here: [Instant SSL Reloading With Database](https://github.com/Hakky54/java-tutorials/tree/main/instant-ssl-reloading-with-spring-jetty-database)
 
 #### Requirements
- - Java 17
+ - Java 21
  - Terminal
 
 #### Configure SSL Update Service
