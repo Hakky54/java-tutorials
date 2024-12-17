@@ -40,3 +40,11 @@ A repository containing different java tutorials
 
 ## Serialization & Deserialization ☢️
 - [Two-way object serialization while using one model with Jackson and Spring Boot](two-way-object-serialization)
+
+# Contributing
+
+There are plenty of ways to contribute to this project:
+
+* Give it a star
+* Make a donation through [GitHub](https://github.com/sponsors/Hakky54) or [open collective](https://opencollective.com/hakky54)
+* Submit a PR
