@@ -12,7 +12,8 @@ A repository containing different java tutorials
 ## Testing 🎯
 - [Unit Testing Static Methods with Mockito](mock-statics-with-mockito)
 - [Unit Testing Java Util Logging logs with LogCaptor](log-captor-examples/log-captor-with-java-util-logging)
-- [Unit Testing Log4J logs with LogCaptor](log-captor-examples/log-captor-with-log4j-core)
+- [Unit Testing Log4J API logs with LogCaptor](log-captor-examples/log-captor-with-log4j-api)
+- [Unit Testing Log4J Core logs with LogCaptor](log-captor-examples/log-captor-with-log4j-core)
 - [Unit Testing SLF4J Logback logs with LogCaptor](log-captor-examples/log-captor-with-slf4j-logback-classic)
 - [Unit Testing SLF4J Log4j logs with LogCaptor](log-captor-examples/log-captor-with-slf4j-log4j)
 - [Unit Testing Flogger logs with LogCaptor](log-captor-examples/log-captor-with-flogger)
