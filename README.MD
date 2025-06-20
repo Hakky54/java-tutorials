@@ -42,6 +42,9 @@ A repository containing different java tutorials
 ## Serialization & Deserialization ☢️
 - [Two-way object serialization while using one model with Jackson and Spring Boot](two-way-object-serialization)
 
+## Miscellaneous 🎭
+- [JVM Rainbow - Mixing Java, Kotlin, Scala and Groovy](jvm-rainbow)
+
 # Contributing
 
 There are plenty of ways to contribute to this project:

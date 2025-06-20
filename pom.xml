@@ -25,6 +25,7 @@
         <module>instant-ssl-reloading-with-spring-tomcat</module>
         <module>bypassing-overruling-ssl-configuration</module>
         <module>trust-me</module>
+        <module>jvm-rainbow</module>
     </modules>
 
     <licenses>
@@ -49,10 +50,17 @@
 
     <properties>
         <version.java>21</version.java>
+        <version.kotlin>2.0.0</version.kotlin>
+        <version.scala>2.13</version.scala>
+        <version.groovy>4.0.27</version.groovy>
         <version.maven-surefire-plugin>3.0.0-M7</version.maven-surefire-plugin>
         <version.maven-fail-safe>3.0.0-M7</version.maven-fail-safe>
         <version.maven-compiler-plugin>3.10.1</version.maven-compiler-plugin>
         <version.maven-shade-plugin>3.4.1</version.maven-shade-plugin>
+        <version.scala-compiler>2.13.14</version.scala-compiler>
+        <version.scala-maven-plugin>4.9.1</version.scala-maven-plugin>
+        <version.gmavenplus-plugin>4.2.0</version.gmavenplus-plugin>
+        <version.scalatest-maven-plugin>2.2.0</version.scalatest-maven-plugin>
         <version.os-maven-plugin>1.7.1</version.os-maven-plugin>
         <version.protobuf-maven-plugin>0.6.1</version.protobuf-maven-plugin>
         <version.exec-maven-plugin>3.1.0</version.exec-maven-plugin>
@@ -93,6 +101,7 @@
         <version.byte-buddy>1.15.1</version.byte-buddy>
         <version.consolecaptor>1.0.3</version.consolecaptor>
         <version.postgresql>42.5.0</version.postgresql>
+        <version.scalatest>3.2.19</version.scalatest>
         <version.testcontainers-postgresql>1.17.3</version.testcontainers-postgresql>
     </properties>
 
