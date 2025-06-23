@@ -1,1 +1,1 @@
-# ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/jvm-rainbow/images/rainbow_left.png?raw=true) JVM Rainbow ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/jvm-rainbow/images/rainbow_right.png?raw=true) 
+# 🌈 JVM Rainbow
