@@ -1,1 +1,173 @@
 # 🌈 JVM Rainbow
+## Using Java, Scala, Kotlin and Groovy
+
+This projects demonstrates the possibility of writing and using multiple JVM languages in a single project and single root package with Maven. It serves to help others to easily configure their project if they need a subset or the whole configuration.
+This small project has been extracted from the following project: [hakky54/mutual-tls-ssl](https://github.com/Hakky54/mutual-tls-ssl) which contains example http client configuration and example http requests written in Java, Scala, Kotlin and Groovy.
+
+On this page you can find the [dependency](#required-dependencies) and [compiler/plugin configuration](#compiler-configuration) however, the detailed project configuration can be found in the [pom](pom.xml) file which contains the exact dependency/plugin version and configuration for unit testing. 
+Unit tests are also present and integrated in the maven test phase. Run `mvn verify` to see it in action
+
+## Compiler configuration
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>${version.maven-compiler-plugin}</version>
+    <executions>
+        <execution>
+            <id>default-compile</id>
+            <phase>none</phase>
+        </execution>
+        <execution>
+            <id>default-testCompile</id>
+            <phase>none</phase>
+        </execution>
+        <execution>
+            <id>java-compile</id>
+            <phase>compile</phase>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>java-test-compile</id>
+            <phase>test-compile</phase>
+            <goals>
+                <goal>testCompile</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
+<plugin>
+    <groupId>org.jetbrains.kotlin</groupId>
+    <artifactId>kotlin-maven-plugin</artifactId>
+    <version>${version.kotlin}</version>
+    <configuration>
+        <jvmTarget>11</jvmTarget>
+    </configuration>
+    <executions>
+        <execution>
+            <id>compile</id>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+            <configuration>
+                <sourceDirs>
+                    <sourceDir>${project.basedir}/src/main/java</sourceDir>
+                </sourceDirs>
+            </configuration>
+        </execution>
+        <execution>
+            <id>test-compile</id>
+            <goals>
+                <goal>test-compile</goal>
+            </goals>
+            <configuration>
+                <sourceDirs>
+                    <sourceDir>${project.basedir}/src/test/java</sourceDir>
+                </sourceDirs>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+
+<plugin>
+    <groupId>net.alchim31.maven</groupId>
+    <artifactId>scala-maven-plugin</artifactId>
+    <version>${version.scala-maven-plugin}</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>compile</goal>
+                <goal>testCompile</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
+<plugin>
+    <groupId>org.codehaus.gmavenplus</groupId>
+    <artifactId>gmavenplus-plugin</artifactId>
+    <version>${version.gmavenplus-plugin}</version>
+    <executions>
+        <execution>
+            <id>groovy</id>
+            <goals>
+                <goal>addSources</goal>
+                <goal>addTestSources</goal>
+                <goal>generateStubs</goal>
+                <goal>compile</goal>
+                <goal>generateTestStubs</goal>
+                <goal>compileTests</goal>
+                <goal>removeStubs</goal>
+                <goal>removeTestStubs</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <sources>
+            <source>
+                <directory>${project.basedir}/src/main/java</directory>
+                <includes>
+                    <include>**/*.groovy</include>
+                </includes>
+            </source>
+        </sources>
+        <testSources>
+            <testSource>
+                <directory>${project.basedir}/src/test/java</directory>
+                <includes>
+                    <include>**/*.groovy</include>
+                </includes>
+            </testSource>
+        </testSources>
+    </configuration>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>${version.groovy}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</plugin>
+
+<plugin>
+    <groupId>org.scalatest</groupId>
+    <artifactId>scalatest-maven-plugin</artifactId>
+    <version>${version.scalatest-maven-plugin}</version>
+    <executions>
+        <execution>
+            <id>test</id>
+            <goals>
+                <goal>test</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+## Required dependencies
+```xml
+<dependency>
+    <groupId>org.jetbrains.kotlin</groupId>
+    <artifactId>kotlin-stdlib</artifactId>
+    <version>${version.kotlin}</version>
+</dependency>
+<dependency>
+    <groupId>org.scala-lang</groupId>
+    <artifactId>scala-library</artifactId>
+    <version>${version.scala-compiler}</version>
+</dependency>
+<dependency>
+    <groupId>org.scala-lang</groupId>
+    <artifactId>scala-compiler</artifactId>
+    <version>${version.scala-compiler}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.groovy</groupId>
+    <artifactId>groovy</artifactId>
+    <version>${version.groovy}</version>
+</dependency>
+```
