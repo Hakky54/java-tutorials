@@ -17,8 +17,6 @@ package nl.altindag.jvm.rainbow
 
 class KotlinService : GreetingsService {
 
-    override fun hello(): String? {
-        return "hello"
-    }
+    override fun hello(): String = "Greetings from Kotlin!"
 
 }

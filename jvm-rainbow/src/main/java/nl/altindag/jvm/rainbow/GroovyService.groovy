@@ -19,7 +19,7 @@ class GroovyService implements GreetingsService {
 
     @Override
     String hello() {
-        "hello"
+        "Greetings from Groovy!"
     }
 
 }

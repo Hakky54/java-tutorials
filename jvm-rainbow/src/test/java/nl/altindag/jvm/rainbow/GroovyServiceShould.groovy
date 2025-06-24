@@ -24,7 +24,7 @@ class GroovyServiceShould extends GroovyTestCase {
     void testSayHello() {
         def service = new GroovyService()
         def message = service.hello()
-        assertThat(message).isEqualTo("hello")
+        assertThat(message).isEqualTo("Greetings from Groovy!")
     }
 
 }

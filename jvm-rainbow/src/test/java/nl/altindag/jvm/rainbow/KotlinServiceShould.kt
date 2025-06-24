@@ -24,7 +24,7 @@ class KotlinServiceShould {
     fun sayHello() {
         val service = KotlinService()
         val message = service.hello()
-        assertThat(message).isEqualTo("hello")
+        assertThat(message).isEqualTo("Greetings from Kotlin!")
     }
 
 }

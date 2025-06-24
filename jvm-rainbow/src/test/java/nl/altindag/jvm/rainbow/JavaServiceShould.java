@@ -25,6 +25,6 @@ class JavaServiceShould {
     void sayHello() {
         var service = new JavaService();
         String message = service.hello();
-        assertThat(message).isEqualTo("hello");
+        assertThat(message).isEqualTo("Greetings from Java!");
     }
 }

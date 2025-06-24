@@ -22,7 +22,7 @@ class ScalaServiceShould extends AnyFunSpec {
   describe("say hello") {
     val service = new ScalaService()
     val message = service.hello()
-    assert(message == "hello")
+    assert(message == "Greetings from Scala!")
   }
 
 }

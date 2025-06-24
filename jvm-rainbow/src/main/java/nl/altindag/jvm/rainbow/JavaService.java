@@ -19,7 +19,7 @@ public class JavaService implements GreetingsService {
 
     @Override
     public String hello() {
-        return "hello";
+        return "Greetings from Java!";
     }
 
 }

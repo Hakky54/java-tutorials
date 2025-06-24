@@ -17,6 +17,6 @@ package nl.altindag.jvm.rainbow
 
 class ScalaService extends GreetingsService {
 
-  override def hello(): String = "hello"
+  override def hello(): String = "Greetings from Scala!"
 
 }
