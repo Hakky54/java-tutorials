@@ -26,6 +26,7 @@
         <module>bypassing-overruling-ssl-configuration</module>
         <module>trust-me</module>
         <module>jvm-rainbow</module>
+        <module>streaming-json-validation</module>
     </modules>
 
     <licenses>
@@ -92,6 +93,8 @@
         <version.quarkus>3.13.0</version.quarkus>
         <version.mysql-connector>8.3.0</version.mysql-connector>
         <version.lombok>1.18.34</version.lombok>
+        <version.jakarta-annotation-api>3.0.0</version.jakarta-annotation-api>
+        <version.hibernate-validator>9.0.1.Final</version.hibernate-validator>
         <version.jboss-logging>3.6.0.Final</version.jboss-logging>
         <version.assertj-core>3.23.1</version.assertj-core>
         <version.junit>5.10.3</version.junit>

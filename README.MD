@@ -41,6 +41,7 @@ A repository containing different java tutorials
 
 ## Serialization & Deserialization ☢️
 - [Two-way object serialization while using one model with Jackson and Spring Boot](two-way-object-serialization)
+- [Streaming JSON validation](streaming-json-validation)
 
 ## Miscellaneous 🎭
 - [JVM Rainbow - Mixing Java, Kotlin, Scala and Groovy](jvm-rainbow)
