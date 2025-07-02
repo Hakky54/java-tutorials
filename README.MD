@@ -24,13 +24,14 @@ A repository containing different java tutorials
 - [Unit testing logs with LogCaptor while using Quarkus with Jboss logging and Lombok](log-captor-examples/log-captor-with-quarkus-jboss-lombok)
 
 ## Security 🔐
-- [Instant Server SSL Reloading with Spring Boot and Jetty](instant-server-ssl-reloading)
-- [Instant Server SSL Reloading with Spring Boot and Tomcat](instant-ssl-reloading-with-spring-tomcat)
-- [Instant Server SSL Reloading with Vert.x](instant-server-ssl-reloading-with-vertx/vertx-server)
-- [Instant Server SSL Reloading with Netty](instant-server-ssl-reloading-with-netty/netty-server)
-- [Instant Server SSL Reloading with gRPC](grpc-client-server-with-ssl/instant-server-ssl-reloading-with-grpc)
-- [Instant Server SSL Reloading with Spring Boot and Jetty and Database](instant-ssl-reloading-with-spring-jetty-database)
-- [Instant Server SSL Reloading with Quarkus](instant-server-ssl-reloading-with-quarkus)
+- Instant Server SSL Reloading
+  - [Spring Boot and Jetty](instant-server-ssl-reloading)
+  - [Spring Boot and Tomcat](instant-ssl-reloading-with-spring-tomcat)
+  - [Vert.x](instant-server-ssl-reloading-with-vertx/vertx-server)
+  - [Netty](instant-server-ssl-reloading-with-netty/netty-server)
+  - [gRPC](grpc-client-server-with-ssl/instant-server-ssl-reloading-with-grpc)
+  - [Spring Boot and Jetty and Database](instant-ssl-reloading-with-spring-jetty-database)
+  - [Quarkus](instant-server-ssl-reloading-with-quarkus)
 - [gRPC with SSL for Client and Server](grpc-client-server-with-ssl)
 - [ElasticSearch with SSL](elasticsearch-with-ssl)
 - [WebSocket Client with SSL](websocket-client-with-ssl)  
