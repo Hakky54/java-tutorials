@@ -27,6 +27,7 @@ A repository containing different java tutorials
 - Instant Server SSL Reloading
   - [Spring Boot and Jetty](instant-server-ssl-reloading)
   - [Spring Boot and Tomcat](instant-ssl-reloading-with-spring-tomcat)
+  - [Spring Boot gRPC](instant-ssl-reloading-with-spring-grpc)
   - [Vert.x](instant-server-ssl-reloading-with-vertx/vertx-server)
   - [Netty](instant-server-ssl-reloading-with-netty/netty-server)
   - [gRPC](grpc-client-server-with-ssl/instant-server-ssl-reloading-with-grpc)
