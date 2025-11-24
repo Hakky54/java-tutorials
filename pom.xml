@@ -70,7 +70,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <license.git.copyrightYears>2022</license.git.copyrightYears>
 
-        <version.sslcontext-kickstart>9.0.0</version.sslcontext-kickstart>
+        <version.ayza>10.0.2</version.ayza>
         <version.logcaptor>2.9.3</version.logcaptor>
         <version.spring>3.3.2</version.spring>
         <version.javafx>21.0.3</version.javafx>

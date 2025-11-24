@@ -16,8 +16,8 @@
     <dependencies>
         <dependency>
             <groupId>io.github.hakky54</groupId>
-            <artifactId>sslcontext-kickstart</artifactId>
-            <version>${version.sslcontext-kickstart}</version>
+            <artifactId>ayza</artifactId>
+            <version>${version.ayza}</version>
         </dependency>
 
         <dependency>

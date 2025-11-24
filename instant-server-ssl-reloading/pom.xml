@@ -23,13 +23,13 @@
         <dependencies>
             <dependency>
                 <groupId>io.github.hakky54</groupId>
-                <artifactId>sslcontext-kickstart</artifactId>
-                <version>${version.sslcontext-kickstart}</version>
+                <artifactId>ayza</artifactId>
+                <version>${version.ayza}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.hakky54</groupId>
-                <artifactId>sslcontext-kickstart-for-jetty</artifactId>
-                <version>${version.sslcontext-kickstart}</version>
+                <artifactId>ayza-for-jetty</artifactId>
+                <version>${version.ayza}</version>
             </dependency>
 
             <dependency>

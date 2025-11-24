@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.hakky54</groupId>
-            <artifactId>sslcontext-kickstart-for-jetty</artifactId>
+            <artifactId>ayza-for-jetty</artifactId>
         </dependency>
 
         <dependency>
