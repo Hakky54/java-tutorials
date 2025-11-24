@@ -15,102 +15,39 @@
  */
 package nl.altindag.server.config;
 
+import nl.altindag.server.model.EnhanceableSslBundle;
 import nl.altindag.ssl.SSLFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ssl.NoSuchSslBundleException;
-import org.springframework.boot.ssl.SslBundle;
-import org.springframework.boot.ssl.SslBundleKey;
-import org.springframework.boot.ssl.SslBundles;
-import org.springframework.boot.ssl.SslManagerBundle;
-import org.springframework.boot.ssl.SslOptions;
-import org.springframework.boot.ssl.SslStoreBundle;
+import org.springframework.boot.ssl.SslBundleRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.TrustManagerFactory;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 @Configuration
 public class SSLConfig {
 
-    @Bean
-    public SSLFactory sslFactory(@Value("${ssl.keystore-path}") String keyStorePath,
-                                 @Value("${ssl.keystore-password}") char[] keyStorePassword,
-                                 @Value("${ssl.truststore-path}") String trustStorePath,
-                                 @Value("${ssl.truststore-password}") char[] trustStorePassword,
-                                 @Value("${ssl.client-auth}") boolean isClientAuthenticationRequired) {
+    private final SSLFactory sslFactory;
 
-        return SSLFactory.builder()
+    public SSLConfig(@Value("${ssl.keystore-path}") String keyStorePath,
+                     @Value("${ssl.keystore-password}") char[] keyStorePassword,
+                     @Value("${ssl.truststore-path}") String trustStorePath,
+                     @Value("${ssl.truststore-password}") char[] trustStorePassword,
+                     @Value("${ssl.client-auth}") boolean isClientAuthenticationRequired,
+                     SslBundleRegistry registry) {
+
+        this.sslFactory = SSLFactory.builder()
                 .withSwappableIdentityMaterial()
                 .withSwappableTrustMaterial()
                 .withIdentityMaterial(keyStorePath, keyStorePassword)
                 .withTrustMaterial(trustStorePath, trustStorePassword)
                 .withNeedClientAuthentication(isClientAuthenticationRequired)
                 .build();
+
+        registry.registerBundle("reloadable-ssl-bundle", new EnhanceableSslBundle(sslFactory));
     }
 
     @Bean
-    public SslBundles sslBundles(SSLFactory sslFactory) {
-        return new SslBundles() {
-            @Override
-            public SslBundle getBundle(String name) throws NoSuchSslBundleException {
-                return new SslBundle() {
-                    @Override
-                    public SslStoreBundle getStores() {
-                        return null;
-                    }
-
-                    @Override
-                    public SslBundleKey getKey() {
-                        return null;
-                    }
-
-                    @Override
-                    public SslOptions getOptions() {
-                        return null;
-                    }
-
-                    @Override
-                    public String getProtocol() {
-                        return "";
-                    }
-
-                    @Override
-                    public SslManagerBundle getManagers() {
-                        return new SslManagerBundle() {
-                            @Override
-                            public KeyManagerFactory getKeyManagerFactory() {
-                                return sslFactory.getKeyManagerFactory().get();
-                            }
-
-                            @Override
-                            public TrustManagerFactory getTrustManagerFactory() {
-                                return sslFactory.getTrustManagerFactory().get();
-                            }
-                        };
-                    }
-                };
-            }
-
-            @Override
-            public void addBundleUpdateHandler(String name, Consumer<SslBundle> updateHandler) throws NoSuchSslBundleException {
-
-            }
-
-            @Override
-            public void addBundleRegisterHandler(BiConsumer<String, SslBundle> registerHandler) {
-
-            }
-
-            @Override
-            public List<String> getBundleNames() {
-                return Collections.emptyList();
-            }
-        };
+    public SSLFactory sslFactory() {
+        return sslFactory;
     }
 
 }

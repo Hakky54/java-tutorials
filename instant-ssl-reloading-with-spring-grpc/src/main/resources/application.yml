@@ -13,3 +13,4 @@ spring:
         enabled: true
         client-auth: require
         secure: true
+        bundle: "reloadable-ssl-bundle"
