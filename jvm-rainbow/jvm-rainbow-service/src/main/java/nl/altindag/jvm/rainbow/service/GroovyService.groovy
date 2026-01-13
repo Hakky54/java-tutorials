@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.jvm.rainbow;
+package nl.altindag.jvm.rainbow.service;
 
-public class JavaService implements GreetingsService {
+class GroovyService implements GreetingsService {
 
     @Override
-    public String hello() {
-        return "Greetings from Java!";
+    String hello() {
+        "Greetings from Groovy!"
     }
 
 }

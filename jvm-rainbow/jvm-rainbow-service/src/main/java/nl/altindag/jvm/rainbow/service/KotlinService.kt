@@ -13,16 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.jvm.rainbow
+package nl.altindag.jvm.rainbow.service
 
-import org.scalatest.funspec.AnyFunSpec
+class KotlinService : GreetingsService {
 
-class ScalaServiceShould extends AnyFunSpec {
-
-  describe("say hello") {
-    val service = new ScalaService()
-    val message = service.hello()
-    assert(message == "Greetings from Scala!")
-  }
+    override fun hello(): String = "Greetings from Kotlin!"
 
 }

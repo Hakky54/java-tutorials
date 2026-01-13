@@ -13,10 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.jvm.rainbow;
+package nl.altindag.jvm.rainbow.service;
 
-public interface GreetingsService {
+import org.junit.jupiter.api.Test;
 
-    String hello();
+import static org.assertj.core.api.Assertions.assertThat;
+
+class JavaServiceShould {
+
+    @Test
+    void sayHello() {
+        JavaService service = new JavaService();
+        String message = service.hello();
+        assertThat(message).isEqualTo("Greetings from Java!");
+    }
 
 }

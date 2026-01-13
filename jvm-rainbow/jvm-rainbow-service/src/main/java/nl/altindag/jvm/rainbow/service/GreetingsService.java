@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.jvm.rainbow
+package nl.altindag.jvm.rainbow.service;
 
-class KotlinService : GreetingsService {
+public interface GreetingsService {
 
-    override fun hello(): String = "Greetings from Kotlin!"
+    String hello();
 
 }

@@ -1,8 +1,8 @@
 # 🌈 JVM Rainbow
-## Using Java, Scala, Kotlin and Groovy
+## Using Java, Scala, Kotlin, Clojure and Groovy
 
 This projects demonstrates the possibility of writing and using multiple JVM languages in a single project and single root package with Maven. It serves to help others to easily configure their project if they need a subset or the whole configuration.
-This small project has been extracted from the following project: [hakky54/mutual-tls-ssl](https://github.com/Hakky54/mutual-tls-ssl) which contains example http client configuration and example http requests written in Java, Scala, Kotlin and Groovy.
+This small project has been extracted from the following project: [hakky54/mutual-tls-ssl](https://github.com/Hakky54/mutual-tls-ssl) which contains example http client configuration and example http requests written in Java, Scala, Kotlin, Clojure and Groovy.
 
 On this page you can find the [dependency](#required-dependencies) and [compiler/plugin configuration](#compiler-configuration) however, the detailed project configuration can be found in the [pom](pom.xml) file which contains the exact dependency/plugin version and configuration for unit testing. 
 Unit tests are also present and integrated in the maven test phase. Run `mvn verify` to see it in action
@@ -13,6 +13,9 @@ Unit tests are also present and integrated in the maven test phase. Run `mvn ver
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
     <version>${version.maven-compiler-plugin}</version>
+    <configuration>
+        <release>8</release>
+    </configuration>
     <executions>
         <execution>
             <id>default-compile</id>
@@ -44,7 +47,7 @@ Unit tests are also present and integrated in the maven test phase. Run `mvn ver
     <artifactId>kotlin-maven-plugin</artifactId>
     <version>${version.kotlin}</version>
     <configuration>
-        <jvmTarget>11</jvmTarget>
+        <jvmTarget>1.8</jvmTarget>
     </configuration>
     <executions>
         <execution>
@@ -76,11 +79,38 @@ Unit tests are also present and integrated in the maven test phase. Run `mvn ver
     <groupId>net.alchim31.maven</groupId>
     <artifactId>scala-maven-plugin</artifactId>
     <version>${version.scala-maven-plugin}</version>
+    <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+    </configuration>
     <executions>
         <execution>
+            <phase>generate-sources</phase>
             <goals>
                 <goal>compile</goal>
                 <goal>testCompile</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
+<plugin>
+    <groupId>com.theoryinpractise</groupId>
+    <artifactId>clojure-maven-plugin</artifactId>
+    <version>${version.clojure-maven-plugin}</version>
+    <extensions>true</extensions>
+    <configuration>
+        <sourceDirectories>
+            <sourceDirectory>src/main/java</sourceDirectory>
+        </sourceDirectories>
+        <temporaryOutputDirectory>true</temporaryOutputDirectory>
+    </configuration>
+    <executions>
+        <execution>
+            <id>compile-clojure</id>
+            <phase>compile</phase>
+            <goals>
+                <goal>compile</goal>
             </goals>
         </execution>
     </executions>
@@ -169,5 +199,10 @@ Unit tests are also present and integrated in the maven test phase. Run `mvn ver
     <groupId>org.apache.groovy</groupId>
     <artifactId>groovy</artifactId>
     <version>${version.groovy}</version>
+</dependency>
+<dependency>
+    <groupId>org.clojure</groupId>
+    <artifactId>clojure</artifactId>
+    <version>${version.clojure}</version>
 </dependency>
 ```

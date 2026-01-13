@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.jvm.rainbow;
+package nl.altindag.jvm.rainbow.service
 
-class GroovyService implements GreetingsService {
+import org.scalatest.funspec.AnyFunSpec
 
-    @Override
-    String hello() {
-        "Greetings from Groovy!"
-    }
+class ScalaServiceShould extends AnyFunSpec {
+
+  describe("say hello") {
+    val service = new ScalaService()
+    val message = service.hello()
+    assert(message == "Greetings from Scala!")
+  }
 
 }

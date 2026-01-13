@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.jvm.rainbow
+package nl.altindag.jvm.rainbow.service
 
 class ScalaService extends GreetingsService {
 

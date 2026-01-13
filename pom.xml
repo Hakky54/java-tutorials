@@ -55,6 +55,7 @@
         <version.kotlin>2.0.0</version.kotlin>
         <version.scala>2.13</version.scala>
         <version.groovy>4.0.27</version.groovy>
+        <version.clojure>1.12.4</version.clojure>
         <version.maven-surefire-plugin>3.0.0-M7</version.maven-surefire-plugin>
         <version.maven-fail-safe>3.0.0-M7</version.maven-fail-safe>
         <version.maven-compiler-plugin>3.10.1</version.maven-compiler-plugin>
@@ -62,6 +63,7 @@
         <version.scala-compiler>2.13.14</version.scala-compiler>
         <version.scala-maven-plugin>4.9.1</version.scala-maven-plugin>
         <version.gmavenplus-plugin>4.2.0</version.gmavenplus-plugin>
+        <version.clojure-maven-plugin>1.9.3</version.clojure-maven-plugin>
         <version.scalatest-maven-plugin>2.2.0</version.scalatest-maven-plugin>
         <version.os-maven-plugin>1.7.1</version.os-maven-plugin>
         <version.protobuf-maven-plugin>0.6.1</version.protobuf-maven-plugin>
@@ -191,6 +193,7 @@ limitations under the License.
                         <exclude>**/*.sh</exclude>
                         <exclude>**/*.env</exclude>
                         <exclude>**/*.yml</exclude>
+                        <exclude>**/*.clj</exclude>
                     </excludes>
                     <strictCheck>true</strictCheck>
                     <mapping>

@@ -46,7 +46,7 @@ A repository containing different java tutorials
 - [Streaming JSON validation](streaming-json-validation)
 
 ## Miscellaneous 🎭
-- [JVM Rainbow - Mixing Java, Kotlin, Scala and Groovy](jvm-rainbow)
+- [JVM Rainbow - Mixing Java, Kotlin, Scala, Clojure and Groovy](jvm-rainbow)
 
 # Contributing
 

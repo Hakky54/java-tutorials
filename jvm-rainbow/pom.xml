@@ -11,6 +11,12 @@
     </parent>
 
     <artifactId>jvm-rainbow</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>jvm-rainbow-service</module>
+        <module>jvm-rainbow-app</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -34,6 +40,12 @@
             <groupId>org.apache.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${version.groovy}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.clojure</groupId>
+            <artifactId>clojure</artifactId>
+            <version>${version.clojure}</version>
         </dependency>
 
         <dependency>
@@ -80,6 +92,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.maven-compiler-plugin}</version>
+                <configuration>
+                    <release>8</release>
+                </configuration>
                 <executions>
                     <execution>
                         <id>default-compile</id>
@@ -111,7 +126,7 @@
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${version.kotlin}</version>
                 <configuration>
-                    <jvmTarget>11</jvmTarget>
+                    <jvmTarget>1.8</jvmTarget>
                 </configuration>
                 <executions>
                     <execution>
@@ -143,8 +158,13 @@
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
                 <version>${version.scala-maven-plugin}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
                 <executions>
                     <execution>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>compile</goal>
                             <goal>testCompile</goal>
@@ -209,6 +229,28 @@
                         <id>test</id>
                         <goals>
                             <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.theoryinpractise</groupId>
+                <artifactId>clojure-maven-plugin</artifactId>
+                <version>${version.clojure-maven-plugin}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <sourceDirectories>
+                        <sourceDirectory>src/main/java</sourceDirectory>
+                    </sourceDirectories>
+                    <temporaryOutputDirectory>true</temporaryOutputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>compile-clojure</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
                         </goals>
                     </execution>
                 </executions>
