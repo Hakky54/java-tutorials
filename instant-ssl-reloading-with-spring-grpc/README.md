@@ -5,6 +5,7 @@ A downtime is therefore unavoidable. This project demonstrates with a basic setu
 
 The repository contains:
 - Server, based on Spring Boot with Netty as a server engine for gRPC
+- Client, based on Spring Boot with Netty as a client engine for gRPC
 
 ### SSL Updating entrypoint for the server:
 The server has two ways to update the existing ssl material:
@@ -41,6 +42,9 @@ Adjust the content of the identity and truststore and after 10 seonds the cron j
 
 Refresh your browser tab and open the certificate details again and compare the expiration date with the one you have noted down.
 You should have a similar certificate detail as shown below:
+
+#### Refresh the client certificates with the file listener
+Same steps can be repeated for the client in the client directory.
 
 ![alt text](https://github.com/Hakky54/java-tutorials/blob/main/instant-server-ssl-reloading/images/after-reloading.png?raw=true)
 
